@@ -40,7 +40,7 @@ body{
 }
 
 /* =====================================
-   HEADER
+   HEADER NOVO
 ===================================== */
 
 .header{
@@ -48,112 +48,99 @@ body{
 background:white;
 
 border-bottom:
-
 4px solid #D4A017;
 
-padding:20px 40px;
+padding:20px 50px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
 
 box-shadow:
-0 2px 12px rgba(0,0,0,.05);
+0 4px 15px rgba(0,0,0,.05);
 
 }
 
-.header-container{
+.header-esquerda{
 
-  max-width:1400px;
+display:flex;
 
-  margin:auto;
+align-items:center;
 
-  padding:20px 30px;
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
+gap:25px;
 
 }
 
-.logo-area{
+.logo-principal{
 
-  display:flex;
-
-  align-items:center;
-
-  gap:18px;
+width:160px;
 
 }
 
-.logo{
+.titulo-principal{
 
-  width:120px;
-
-}
-
-.titulos h1{
-
-  color:#0F2E5C;
-
-  font-size:48px;
-
-  font-weight:700;
-
-  letter-spacing:1px;
+color:#0F2E5C;
 
 }
 
-.titulos h2{
+.linha-superior{
 
-  color:#3A8D40;
+font-size:22px;
 
-  font-size:24px;
+font-weight:600;
 
-  margin-top:6px;
-
-}
-
-.titulos p{
-
-  color:#666;
-
-  margin-top:4px;
+letter-spacing:2px;
 
 }
 
-.usuario-card{
+.linha-central{
 
-  background:white;
+font-size:58px;
 
-  border:
+font-weight:700;
 
-  1px solid var(--borda);
-
-  border-radius:16px;
-
-  padding:16px;
-
-  text-align:right;
-
-  min-width:260px;
+line-height:1;
 
 }
 
-.usuario-email{
+.linha-inferior{
 
-  font-weight:bold;
+font-size:24px;
 
-  color:var(--azul);
-
-}
-
-.usuario-perfil{
-
-  color:#666;
-
-  margin-top:4px;
+margin-top:10px;
 
 }
 
+.cidade{
+
+color:#3A8D40;
+
+font-size:24px;
+
+font-weight:bold;
+
+margin-top:15px;
+
+}
+.usuario-header{
+
+background:white;
+
+border-radius:24px;
+
+padding:25px;
+
+min-width:380px;
+
+box-shadow:
+0 6px 18px rgba(0,0,0,.08);
+
+border:
+1px solid #ececec;
+
+}
 /* =====================================
    MAIN
 ===================================== */
@@ -334,32 +321,43 @@ box-shadow:
 }
 
 /* =====================================
-   FOOTER
+   FOOTER NOVO
 ===================================== */
 
 .footer{
 
-background:#0f2e5c;
+background:#0F2E5C;
 
 color:white;
 
-text-align:center;
+display:flex;
 
-padding:25px;
+justify-content:space-around;
+
+align-items:center;
+
+padding:30px;
 
 border-top:
-
 4px solid #D4A017;
 
-margin-top:50px;
+margin-top:60px;
+
+text-align:center;
 
 }
 
-.footer img{
+.footer-coluna{
 
-  width:70px;
+width:33%;
 
-  margin-bottom:12px;
+}
+
+.brasao-footer{
+
+width:70px;
+
+margin-bottom:10px;
 
 }
 
@@ -402,14 +400,13 @@ margin-top:50px;
 
 position:fixed;
 
-left:-120px;
+left:-160px;
 
-top:50%;
+top:55%;
 
-transform:translateY(-50%);
+width:450px;
 
-width:850px;
-height:850px;
+height:450px;
 
 background-image:url('cropped-brasao.png');
 
@@ -419,7 +416,11 @@ background-position:center;
 
 background-size:contain;
 
-opacity:.06;
+opacity:.025;
+
+transform:
+translateY(-50%)
+rotate(-45deg);
 
 pointer-events:none;
 
@@ -431,14 +432,13 @@ z-index:0;
 
 position:fixed;
 
-right:-120px;
+right:-160px;
 
-top:50%;
+top:55%;
 
-transform:translateY(-50%);
+width:450px;
 
-width:850px;
-height:850px;
+height:450px;
 
 background-image:url('logo-programa.png');
 
@@ -448,7 +448,11 @@ background-position:center;
 
 background-size:contain;
 
-opacity:.06;
+opacity:.025;
+
+transform:
+translateY(-50%)
+rotate(45deg);
 
 pointer-events:none;
 
@@ -457,7 +461,7 @@ z-index:0;
 }
 .icone-menu{
 
-  width:190px;
+  width:240px;
 
   height:auto;
 
