@@ -84,23 +84,59 @@ function carregarSistema() {
     return;
   }
 
-  document.getElementById('usuarioArea').innerHTML = `
-    <div class="usuario-email">
-      ${usuario.email}
+document.getElementById(
+'usuarioArea'
+).innerHTML = `
+
+<div class="card-usuario">
+
+  <div class="usuario-avatar">
+
+    👤
+
+  </div>
+
+  <div class="usuario-info">
+
+    <div class="usuario-nome">
+
+      Roselaine Mezz
+
     </div>
 
-    <div class="usuario-perfil">
-      ${usuario.perfil}
+    <div class="usuario-cargo">
+
+      Administrador do Sistema
+
     </div>
 
-    <br>
+    <div class="usuario-boasvindas">
+
+      Bem-vinda(a)!
+
+    </div>
+
+  </div>
+
+  <div class="usuario-divisor"></div>
+
+  <div class="usuario-sair">
 
     <button
-      class="btn btn-vermelho"
-      onclick="sair()">
+      onclick="sair()"
+      class="btn-sair-header">
+
+      ↪
+      <br>
       Sair
+
     </button>
-  `;
+
+  </div>
+
+</div>
+
+`;
 
   document.getElementById('loginContainer').style.display = 'none';
   document.getElementById('menu').style.display = 'grid';
