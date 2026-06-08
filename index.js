@@ -138,215 +138,104 @@ async function entrar() {
 
   }
 
-  const usuario =
+  function mostrarLogin() {
 
-    await consultarPermissao(
-      email
-    );
-console.log(
-  usuario
-);
-  if (
+document.getElementById(
+'loginContainer'
+).style.display = 'block';
 
-    usuario.status !==
-    'ATIVO'
-
-  ) {
-
-    alert(
-      'Usuário sem acesso.'
-    );
-
-    return;
-
-  }
-
-  localStorage.setItem(
-
-    'usuario',
-
-    JSON.stringify(
-      usuario
-    )
-
-  );
-
-  carregarSistema();
-
-}
-
-function montarMenu(
-  usuario
-) {
-
-  return `
-
-<div class="grid">
-
-  <a
-    href="perfil.html"
-    class="card-menu">
-
-    <img
-      src="icone-meu-perfil.png">
-
-    <h3>
-
-      Meu Perfil
-
-    </h3>
-
-  </a>
-
-  <a
-    href="escola.html"
-    class="card-menu">
-
-    <img
-      src="icone-escola.png">
-
-    <h3>
-
-      Painel da Escola
-
-    </h3>
-
-  </a>
-
-  <a
-    href="eventos.html"
-    class="card-menu">
-
-    <img
-      src="icone-eventos.png">
-
-    <h3>
-
-      Eventos
-
-    </h3>
-
-  </a>
-
-  <a
-    href="admin.html"
-    class="card-menu">
-
-    <img
-      src="icone-administracao.png">
-
-    <h3>
-
-      Administração
-
-    </h3>
-
-  </a>
-
-  <a
-    href="coordenador.html"
-    class="card-menu">
-
-    <img
-      src="icone-coordenador.png">
-
-    <h3>
-
-      Coordenador de Ensino
-
-    </h3>
-
-  </a>
-
-  <a
-    href="validar.html"
-    class="card-menu">
-
-    <img
-      src="icone-validacao.png">
-
-    <h3>
-
-      Validar Certificados
-
-    </h3>
-
-  </a>
-
-</div>
-
-`;
+document.getElementById(
+'menu'
+).style.display = 'none';
 
 }
 
 function carregarSistema() {
 
-  const usuario =
+const usuario = JSON.parse(
 
-    JSON.parse(
+```
+localStorage.getItem(
+  'usuario'
+)
+```
 
-      localStorage.getItem(
-        'usuario'
-      )
+);
 
-    );
+if (!usuario) {
 
-  document
-    .getElementById(
-      'usuarioArea'
-    )
-    .innerHTML = `
+```
+mostrarLogin();
 
-    <div class="usuario-nome">
+return;
+```
 
-      ${usuario.email}
+}
 
-    </div>
+document.getElementById(
+'usuarioArea'
+).innerHTML = `
 
-    <div class="usuario-perfil">
+```
+<div class="usuario-email">
 
-      ${usuario.perfil}
+  ${usuario.email}
 
-    </div>
+</div>
 
-    <button
-      class="btn-sair"
-      onclick="sair()">
+<div class="usuario-perfil">
 
-      Sair
+  ${usuario.perfil}
 
-    </button>
+</div>
 
-  `;
+<br>
 
-  document
-    .getElementById(
-      'conteudo'
-    )
-    .innerHTML =
+<button
+  class="btn btn-vermelho"
+  onclick="sair()">
 
-    montarMenu(
-      usuario
-    );
+  Sair
+
+</button>
+```
+
+`;
+
+document.getElementById(
+'loginContainer'
+).style.display = 'none';
+
+document.getElementById(
+'menu'
+).style.display = 'grid';
 
 }
 
 window.onload = () => {
 
-  const usuario =
+const usuario =
 
-    localStorage.getItem(
-      'usuario'
-    );
+```
+localStorage.getItem(
+  'usuario'
+);
+```
 
-  if (!usuario) {
+if (usuario) {
 
-    mostrarLogin();
+```
+carregarSistema();
+```
 
-    return;
+} else {
 
-  }
+```
+mostrarLogin();
+```
 
-  carregarSistema();
+}
+
+};
 
 };
