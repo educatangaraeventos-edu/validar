@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
@@ -6,8 +7,10 @@
 <meta charset="UTF-8">
 
 <meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0">
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
 
 <title>
 Programa de Formação Continuada
@@ -15,67 +18,260 @@ Programa de Formação Continuada
 
 <link
   rel="stylesheet"
-  href="style.css">
+  href="style.css"
+>
 
 </head>
 
 <body>
 
-<header>
+<header class="header">
 
   <div class="header-container">
 
-    <img
-      src="logo-programa.png"
-      class="logo"
-      alt="Logo">
+```
+<div class="logo-area">
 
-    <div class="titulo-sistema">
+  <img
+    src="logo-programa.png"
+    class="logo"
+    alt="Logo"
+  >
 
-      <h1>
-        Programa de Formação Continuada
-      </h1>
+  <div class="titulos">
 
-      <p>
-        Rede Municipal de Ensino
-      </p>
+    <h1>
+      Programa de Formação Continuada
+    </h1>
 
-      <p>
-        Tangará da Serra - MT
-      </p>
+    <h2>
+      Rede Municipal de Ensino
+    </h2>
 
-    </div>
+    <p>
+      Tangará da Serra - MT
+    </p>
 
-    <div
-      class="usuario"
-      id="usuarioArea">
+  </div>
 
-    </div>
+</div>
+
+<div
+  id="usuarioArea"
+  class="usuario-card"
+>
+
+  <div class="usuario-email">
+    Não conectado
+  </div>
+
+  <button
+    class="btn btn-azul"
+    onclick="mostrarLogin()"
+  >
+    Entrar
+  </button>
+
+</div>
+```
 
   </div>
 
 </header>
 
-<main>
+<main class="main">
 
   <div
-    id="conteudo">
+    id="loginCard"
+    class="card"
+  >
+
+```
+<h2>
+  Entrar no Sistema
+</h2>
+
+<br>
+
+<input
+
+  id="email"
+
+  type="email"
+
+  placeholder="Digite seu e-mail institucional"
+
+  style="
+  width:100%;
+  padding:14px;
+  border:1px solid #D9E1E8;
+  border-radius:12px;
+  "
+
+>
+
+<br><br>
+
+<button
+
+  class="btn btn-azul"
+
+  onclick="entrar()"
+
+>
+
+  Entrar
+
+</button>
+```
+
+  </div>
+
+  <br>
+
+  <div
+
+```
+id="menu"
+
+class="menu-grid"
+
+style="display:none"
+```
+
+>
+
+```
+<div
+  class="menu-card"
+  onclick="location.href='perfil.html'"
+>
+
+  <img
+    src="icone-meu-perfil.png"
+  >
+
+  <h3>
+    Meu Perfil
+  </h3>
+
+  <p>
+    Dados pessoais, crachá e histórico.
+  </p>
+
+</div>
+
+<div
+  class="menu-card"
+  onclick="location.href='escola.html'"
+>
+
+  <img
+    src="icone-escola.png"
+  >
+
+  <h3>
+    Painel da Escola
+  </h3>
+
+  <p>
+    Gestão dos servidores da unidade.
+  </p>
+
+</div>
+
+<div
+  class="menu-card"
+  onclick="location.href='eventos.html'"
+>
+
+  <img
+    src="icone-eventos.png"
+  >
+
+  <h3>
+    Eventos
+  </h3>
+
+  <p>
+    Formações e inscrições.
+  </p>
+
+</div>
+
+<div
+  class="menu-card"
+  onclick="location.href='admin.html'"
+>
+
+  <img
+    src="icone-administracao.png"
+  >
+
+  <h3>
+    Administração
+  </h3>
+
+  <p>
+    Gestão geral do sistema.
+  </p>
+
+</div>
+
+<div
+  class="menu-card"
+  onclick="location.href='coordenador.html'"
+>
+
+  <img
+    src="icone-coordenador.png"
+  >
+
+  <h3>
+    Coordenador de Ensino
+  </h3>
+
+  <p>
+    Formações internas e certificados.
+  </p>
+
+</div>
+
+<div
+  class="menu-card"
+  onclick="location.href='validar.html'"
+>
+
+  <img
+    src="icone-validacao.png"
+  >
+
+  <h3>
+    Validar Certificados
+  </h3>
+
+  <p>
+    Consulta pública de autenticidade.
+  </p>
+
+</div>
+```
 
   </div>
 
 </main>
 
-<footer>
+<footer class="footer">
 
-  Secretaria Municipal de Educação
-
-  <br>
-
-  Tangará da Serra - MT
+Secretaria Municipal de Educação
 
   <br>
 
-  Versão 1.0
+Tangará da Serra - MT
+
+  <br>
+
+Versão 1.0
 
 </footer>
 
