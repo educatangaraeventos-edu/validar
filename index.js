@@ -1,144 +1,59 @@
 const API_URL =
-
 'https://script.google.com/macros/s/AKfycbxISKb7Sq5bkEYIcs8DTElxV8D93fsfbPZDd1fIlQM-CBl-hoSRb82fk08TY1m9fAtx/exec';
 
-function consultarPermissao(
-  email
-) {
+function consultarPermissao(email) {
 
-  return new Promise(
+return new Promise((resolve, reject) => {
 
-    (resolve, reject) => {
+```
+const callbackNome =
+  'callback_' + Date.now();
 
-      const callbackNome =
+window[callbackNome] = function(dados) {
 
-        'callback_' +
+  resolve(dados);
 
-        Date.now();
+  delete window[callbackNome];
 
-      window[callbackNome] =
+  script.remove();
 
-        function(dados) {
+};
 
-          resolve(dados);
+const script =
+  document.createElement('script');
 
-          delete window[callbackNome];
+script.src =
+  API_URL +
+  '?action=permissaoEmail' +
+  '&email=' +
+  encodeURIComponent(email) +
+  '&callback=' +
+  callbackNome;
 
-          script.remove();
+script.onerror = function() {
 
-        };
+  reject();
 
-      const script =
+};
 
-        document.createElement(
-          'script'
-        );
+document.body.appendChild(script);
+```
 
-      script.src =
-
-        API_URL +
-
-        '?action=permissaoEmail' +
-
-        '&email=' +
-
-        encodeURIComponent(
-          email
-        ) +
-
-        '&callback=' +
-
-        callbackNome;
-
-      script.onerror =
-
-        function() {
-
-          reject();
-
-        };
-
-      document.body.appendChild(
-        script
-      );
-
-    }
-
-  );
+});
 
 }
 
 function sair() {
 
-  localStorage.removeItem(
-    'usuario'
-  );
+localStorage.removeItem(
+'usuario'
+);
 
-  location.reload();
+location.reload();
 
 }
 
 function mostrarLogin() {
-
-  document
-    .getElementById(
-      'conteudo'
-    )
-    .innerHTML = `
-
-    <div class="card">
-
-      <h2>
-
-        Entrar no Sistema
-
-      </h2>
-
-      <br>
-
-      <input
-        id="email"
-        type="email"
-        placeholder="Digite seu e-mail">
-
-      <br><br>
-
-      <button
-        class="btn-principal"
-        onclick="entrar()">
-
-        Entrar
-
-      </button>
-
-    </div>
-
-  `;
-
-}
-
-async function entrar() {
-
-  const email =
-
-    document
-      .getElementById(
-        'email'
-      )
-      .value
-      .trim();
-
-  if (!email) {
-
-    alert(
-      'Informe o e-mail.'
-    );
-
-    return;
-
-  }
-
-  function mostrarLogin() {
 
 document.getElementById(
 'loginContainer'
@@ -147,6 +62,82 @@ document.getElementById(
 document.getElementById(
 'menu'
 ).style.display = 'none';
+
+}
+
+async function entrar() {
+
+const email =
+document
+.getElementById('email')
+.value
+.trim();
+
+if (!email) {
+
+```
+alert(
+  'Informe o e-mail.'
+);
+
+return;
+```
+
+}
+
+try {
+
+```
+const usuario =
+  await consultarPermissao(
+    email
+  );
+
+console.log(usuario);
+
+if (
+
+  !usuario ||
+
+  usuario.status !==
+  'ATIVO'
+
+) {
+
+  alert(
+    'Usuário sem acesso.'
+  );
+
+  return;
+
+}
+
+localStorage.setItem(
+
+  'usuario',
+
+  JSON.stringify(
+    usuario
+  )
+
+);
+
+carregarSistema();
+```
+
+}
+
+catch (erro) {
+
+```
+console.error(erro);
+
+alert(
+  'Erro ao consultar permissões.'
+);
+```
+
+}
 
 }
 
@@ -178,15 +169,11 @@ document.getElementById(
 
 ```
 <div class="usuario-email">
-
   ${usuario.email}
-
 </div>
 
 <div class="usuario-perfil">
-
   ${usuario.perfil}
-
 </div>
 
 <br>
@@ -228,7 +215,9 @@ if (usuario) {
 carregarSistema();
 ```
 
-} else {
+}
+
+else {
 
 ```
 mostrarLogin();
