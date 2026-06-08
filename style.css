@@ -55,22 +55,26 @@ border-bottom:3px solid #D4A017;
 
 }
 
-.header-imagem img{
+.header-imagem{
 
-width:100%;
+background:white;
 
-display:block;
+padding:10px 0;
+
+border-bottom:3px solid #D4A017;
+
+position:relative;
 
 }
 .usuario-flutuante{
 
 position:absolute;
 
-top:40px;
+top:20px;
 
-right:50px;
+right:40px;
 
-z-index:10;
+z-index:20;
 
 }
 
