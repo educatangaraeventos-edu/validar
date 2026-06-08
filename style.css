@@ -395,28 +395,26 @@ margin-bottom:12px;
 }
 .footer-secretaria{
 
-font-size:24px;
+font-size:18px;
 
 font-weight:600;
 
-line-height:1.5;
+line-height:1.4;
 
 }
 
 .footer-cidade{
 
-font-size:30px;
-
-font-weight:700;
+font-size:16px;
 
 color:#D4A017;
 
-margin-top:6px;
+margin-top:2px;
 
 }
 .footer-programa{
 
-font-size:30px;
+font-size:18px;
 
 font-weight:600;
 
@@ -424,30 +422,35 @@ font-weight:600;
 
 .footer-versao{
 
-font-size:24px;
+font-size:15px;
 
-color:#D4A017;
-
-margin-top:8px;
+margin-top:4px;
 
 }
 .footer-slogan{
 
-font-size:30px;
+font-size:20px;
 
 font-style:italic;
-
-margin-bottom:10px;
 
 }
 
 .footer-frase{
 
-font-size:24px;
+font-size:15px;
 
-color:#D4A017;
+line-height:1.4;
 
-line-height:1.5;
+}
+.footer-institucional{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:15px;
 
 }
 /* =====================================
