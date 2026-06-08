@@ -1,0 +1,366 @@
+/* ====================================
+   PROGRAMA DE FORMAÇÃO CONTINUADA
+   TANGARÁ DA SERRA - MT
+   ESTILO OFICIAL
+==================================== */
+
+/* RESET */
+
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+
+/* CORES OFICIAIS */
+
+:root {
+
+  --azul: #1E5AA8;
+
+  --verde: #3A8D40;
+
+  --branco: #FFFFFF;
+
+  --cinza-fundo: #F5F7FA;
+
+  --cinza-borda: #D9E1E8;
+
+  --vermelho: #D32F2F;
+
+  --dourado: #C89B3C;
+
+}
+
+/* BODY */
+
+body {
+
+  font-family: Arial, sans-serif;
+
+  background: var(--cinza-fundo);
+
+  color: #333;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+/* HEADER */
+
+header {
+
+  background: var(--branco);
+
+  padding: 20px;
+
+  box-shadow:
+    0 2px 8px rgba(0,0,0,.08);
+
+}
+
+.header-container {
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+}
+
+.logo {
+
+  width: 90px;
+
+}
+
+.titulo-sistema {
+
+  flex: 1;
+
+}
+
+.titulo-sistema h1 {
+
+  color: var(--azul);
+
+  font-size: 28px;
+
+}
+
+.titulo-sistema p {
+
+  color: var(--verde);
+
+  margin-top: 4px;
+
+}
+
+/* USUÁRIO */
+
+.usuario {
+
+  text-align: right;
+
+}
+
+.usuario-nome {
+
+  font-weight: bold;
+
+}
+
+.usuario-perfil {
+
+  color: #666;
+
+  font-size: 14px;
+
+}
+
+/* BOTÃO SAIR */
+
+.btn-sair {
+
+  margin-top: 8px;
+
+  background: var(--vermelho);
+
+  color: white;
+
+  border: none;
+
+  border-radius: 12px;
+
+  padding: 10px 16px;
+
+  cursor: pointer;
+
+}
+
+/* CONTEÚDO */
+
+main {
+
+  flex: 1;
+
+  width: 100%;
+
+  max-width: 1200px;
+
+  margin: 30px auto;
+
+  padding: 0 20px;
+
+}
+
+/* GRID DE CARDS */
+
+.grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(240px,1fr)
+    );
+
+  gap: 20px;
+
+}
+
+/* CARD PADRÃO */
+
+.card {
+
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 20px;
+
+  box-shadow:
+    0 2px 8px rgba(0,0,0,.08);
+
+}
+
+/* CARD MENU */
+
+.card-menu {
+
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 25px;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  color: inherit;
+
+  box-shadow:
+    0 2px 8px rgba(0,0,0,.08);
+
+  transition: .2s;
+
+}
+
+.card-menu:hover {
+
+  transform: translateY(-3px);
+
+}
+
+/* ÍCONES */
+
+.card-menu img {
+
+  width: 100px;
+
+  margin-bottom: 15px;
+
+}
+
+/* TÍTULO CARD */
+
+.card-menu h3 {
+
+  color: var(--azul);
+
+  font-size: 18px;
+
+}
+
+/* BOTÕES */
+
+.btn-principal {
+
+  background: var(--azul);
+
+  color: white;
+
+  border: none;
+
+  border-radius: 12px;
+
+  height: 48px;
+
+  padding: 0 20px;
+
+  cursor: pointer;
+
+}
+
+.btn-sucesso {
+
+  background: var(--verde);
+
+  color: white;
+
+  border: none;
+
+  border-radius: 12px;
+
+  height: 48px;
+
+  padding: 0 20px;
+
+  cursor: pointer;
+
+}
+
+.btn-perigo {
+
+  background: var(--vermelho);
+
+  color: white;
+
+  border: none;
+
+  border-radius: 12px;
+
+  height: 48px;
+
+  padding: 0 20px;
+
+  cursor: pointer;
+
+}
+
+/* CAMPOS */
+
+input {
+
+  width: 100%;
+
+  height: 48px;
+
+  border: 1px solid
+    var(--cinza-borda);
+
+  border-radius: 12px;
+
+  padding: 0 15px;
+
+}
+
+/* RODAPÉ */
+
+footer {
+
+  background: white;
+
+  padding: 20px;
+
+  text-align: center;
+
+  color: #666;
+
+  box-shadow:
+    0 -2px 8px rgba(0,0,0,.04);
+
+}
+
+/* RESPONSIVO */
+
+@media (max-width:768px) {
+
+  .header-container {
+
+    flex-direction: column;
+
+    text-align: center;
+
+  }
+
+  .usuario {
+
+    text-align: center;
+
+  }
+
+  .logo {
+
+    width: 110px;
+
+  }
+
+}
