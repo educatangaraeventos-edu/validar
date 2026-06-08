@@ -66,6 +66,17 @@ border-bottom:3px solid #D4A017;
 position:relative;
 
 }
+.header-imagem img{
+
+width:100%;
+
+max-height:220px;
+
+object-fit:contain;
+
+display:block;
+
+}
 .usuario-flutuante{
 
 position:absolute;
