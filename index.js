@@ -90,11 +90,13 @@ document.getElementById(
 
 <div class="card-usuario">
 
-  <div class="usuario-avatar">
+<div class="usuario-avatar">
 
+  <span class="icone-usuario">
     👤
+  </span>
 
-  </div>
+</div>
 
   <div class="usuario-info">
 
