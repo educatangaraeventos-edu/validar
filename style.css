@@ -45,13 +45,16 @@ body{
 
 .header{
 
-  background:white;
+background:white;
 
-  border-bottom:
-  4px solid var(--dourado);
+border-bottom:
 
-  box-shadow:
-  0 2px 8px rgba(0,0,0,.08);
+4px solid #D4A017;
+
+padding:20px 40px;
+
+box-shadow:
+0 2px 12px rgba(0,0,0,.05);
 
 }
 
@@ -83,27 +86,29 @@ body{
 
 .logo{
 
-  width:90px;
+  width:120px;
 
 }
 
 .titulos h1{
 
-  color:var(--azul);
+  color:#0F2E5C;
 
-  font-size:34px;
+  font-size:48px;
 
   font-weight:700;
+
+  letter-spacing:1px;
 
 }
 
 .titulos h2{
 
-  color:var(--verde);
+  color:#3A8D40;
 
-  font-size:20px;
+  font-size:24px;
 
-  margin-top:4px;
+  margin-top:6px;
 
 }
 
@@ -241,74 +246,33 @@ body{
 
 .menu-card{
 
-  background:white;
+  background:transparent;
 
-  border-radius:20px;
+  border:none;
 
-  overflow:hidden;
+  box-shadow:none;
 
-  cursor:pointer;
+  width:auto;
 
-  transition:.3s;
+  height:auto;
 
-  box-shadow:
-  0 2px 8px rgba(0,0,0,.08);
+  padding:0;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  transition:.25s;
 
 }
 
 .menu-card:hover{
 
   transform:
-  translateY(-6px);
-
-  box-shadow:
-  0 12px 24px rgba(0,0,0,.12);
-
-}
-
-.menu-conteudo{
-
-  padding:30px;
-
-  text-align:center;
-
-}
-
-.menu-conteudo img{
-
-  width:130px;
-
-  height:130px;
-
-  object-fit:contain;
-
-}
-
-.menu-conteudo h3{
-
-  color:var(--azul);
-
-  margin-top:15px;
-
-  font-size:22px;
-
-}
-
-.menu-conteudo p{
-
-  color:#666;
-
-  margin-top:8px;
-
-  line-height:1.5;
-
-}
-
-.menu-faixa{
-
-  height:6px;
-
-  background:var(--dourado);
+  translateY(-6px)
+  scale(1.03);
 
 }
 
@@ -375,17 +339,19 @@ body{
 
 .footer{
 
-  background:
-  var(--azul);
+background:#0f2e5c;
 
-  color:white;
+color:white;
 
-  text-align:center;
+text-align:center;
 
-  padding:30px;
+padding:25px;
 
-  border-top:
-  4px solid var(--dourado);
+border-top:
+
+4px solid #D4A017;
+
+margin-top:50px;
 
 }
 
@@ -428,4 +394,75 @@ body{
   }
 
 }
+/* ==========================
+   MARCAS D'ÁGUA
+========================== */
 
+.marca-esquerda{
+
+position:fixed;
+
+left:-120px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+width:850px;
+height:850px;
+
+background-image:url('cropped-brasao.png');
+
+background-repeat:no-repeat;
+
+background-position:center;
+
+background-size:contain;
+
+opacity:.06;
+
+pointer-events:none;
+
+z-index:0;
+
+}
+
+.marca-direita{
+
+position:fixed;
+
+right:-120px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+width:850px;
+height:850px;
+
+background-image:url('logo-programa.png');
+
+background-repeat:no-repeat;
+
+background-position:center;
+
+background-size:contain;
+
+opacity:.06;
+
+pointer-events:none;
+
+z-index:0;
+
+}
+.icone-menu{
+
+  width:190px;
+
+  height:auto;
+
+  display:block;
+
+  margin:auto;
+
+}
