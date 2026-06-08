@@ -114,25 +114,9 @@ min-width:520px;
 
 .usuario-avatar{
 
-width:70px;
+background:white;
 
-height:70px;
-
-border-radius:50%;
-
-background:#123c77;
-
-color:white;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:38px;
-
-}
+border:2px solid #D4A017;
 
 .usuario-nome{
 
@@ -185,6 +169,17 @@ font-size:18px;
 font-weight:700;
 
 cursor:pointer;
+
+}
+.avatar-img{
+
+width:58px;
+
+height:58px;
+
+object-fit:contain;
+
+display:block;
 
 }
 /* =====================================
