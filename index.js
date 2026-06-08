@@ -2,227 +2,117 @@ const API_URL =
 'https://script.google.com/macros/s/AKfycbxISKb7Sq5bkEYIcs8DTElxV8D93fsfbPZDd1fIlQM-CBl-hoSRb82fk08TY1m9fAtx/exec';
 
 function consultarPermissao(email) {
+  return new Promise((resolve, reject) => {
+    const callbackNome =
+      'callback_' + Date.now();
 
-return new Promise((resolve, reject) => {
+    const script =
+      document.createElement('script');
 
-```
-const callbackNome =
-  'callback_' + Date.now();
+    window[callbackNome] = function(dados) {
+      resolve(dados);
+      delete window[callbackNome];
+      script.remove();
+    };
 
-window[callbackNome] = function(dados) {
+    script.src =
+      API_URL +
+      '?action=permissaoEmail' +
+      '&email=' +
+      encodeURIComponent(email) +
+      '&callback=' +
+      callbackNome;
 
-  resolve(dados);
+    script.onerror = function() {
+      reject(
+        new Error('Erro ao carregar dados da API.')
+      );
+    };
 
-  delete window[callbackNome];
-
-  script.remove();
-
-};
-
-const script =
-  document.createElement('script');
-
-script.src =
-  API_URL +
-  '?action=permissaoEmail' +
-  '&email=' +
-  encodeURIComponent(email) +
-  '&callback=' +
-  callbackNome;
-
-script.onerror = function() {
-
-  reject();
-
-};
-
-document.body.appendChild(script);
-```
-
-});
-
+    document.body.appendChild(script);
+  });
 }
 
 function sair() {
-
-localStorage.removeItem(
-'usuario'
-);
-
-location.reload();
-
+  localStorage.removeItem('usuario');
+  location.reload();
 }
 
 function mostrarLogin() {
-
-document.getElementById(
-'loginContainer'
-).style.display = 'block';
-
-document.getElementById(
-'menu'
-).style.display = 'none';
-
+  document.getElementById('loginContainer').style.display = 'block';
+  document.getElementById('menu').style.display = 'none';
 }
 
 async function entrar() {
+  const email =
+    document.getElementById('email').value.trim();
 
-const email =
-document
-.getElementById('email')
-.value
-.trim();
+  if (!email) {
+    alert('Informe o e-mail.');
+    return;
+  }
 
-if (!email) {
+  try {
+    const usuario =
+      await consultarPermissao(email);
 
-```
-alert(
-  'Informe o e-mail.'
-);
+    if (!usuario || usuario.status !== 'ATIVO') {
+      alert('Usuário sem acesso.');
+      return;
+    }
 
-return;
-```
+    localStorage.setItem(
+      'usuario',
+      JSON.stringify(usuario)
+    );
 
-}
+    carregarSistema();
 
-try {
-
-```
-const usuario =
-  await consultarPermissao(
-    email
-  );
-
-console.log(usuario);
-
-if (
-
-  !usuario ||
-
-  usuario.status !==
-  'ATIVO'
-
-) {
-
-  alert(
-    'Usuário sem acesso.'
-  );
-
-  return;
-
-}
-
-localStorage.setItem(
-
-  'usuario',
-
-  JSON.stringify(
-    usuario
-  )
-
-);
-
-carregarSistema();
-```
-
-}
-
-catch (erro) {
-
-```
-console.error(erro);
-
-alert(
-  'Erro ao consultar permissões.'
-);
-```
-
-}
-
+  } catch (erro) {
+    console.error(erro);
+    alert('Erro ao consultar permissões.');
+  }
 }
 
 function carregarSistema() {
+  const usuario = JSON.parse(
+    localStorage.getItem('usuario')
+  );
 
-const usuario = JSON.parse(
+  if (!usuario) {
+    mostrarLogin();
+    return;
+  }
 
-```
-localStorage.getItem(
-  'usuario'
-)
-```
+  document.getElementById('usuarioArea').innerHTML = `
+    <div class="usuario-email">
+      ${usuario.email}
+    </div>
 
-);
+    <div class="usuario-perfil">
+      ${usuario.perfil}
+    </div>
 
-if (!usuario) {
+    <br>
 
-```
-mostrarLogin();
+    <button
+      class="btn btn-vermelho"
+      onclick="sair()">
+      Sair
+    </button>
+  `;
 
-return;
-```
-
+  document.getElementById('loginContainer').style.display = 'none';
+  document.getElementById('menu').style.display = 'grid';
 }
 
-document.getElementById(
-'usuarioArea'
-).innerHTML = `
+window.onload = function() {
+  const usuario =
+    localStorage.getItem('usuario');
 
-```
-<div class="usuario-email">
-  ${usuario.email}
-</div>
-
-<div class="usuario-perfil">
-  ${usuario.perfil}
-</div>
-
-<br>
-
-<button
-  class="btn btn-vermelho"
-  onclick="sair()">
-
-  Sair
-
-</button>
-```
-
-`;
-
-document.getElementById(
-'loginContainer'
-).style.display = 'none';
-
-document.getElementById(
-'menu'
-).style.display = 'grid';
-
-}
-
-window.onload = () => {
-
-const usuario =
-
-```
-localStorage.getItem(
-  'usuario'
-);
-```
-
-if (usuario) {
-
-```
-carregarSistema();
-```
-
-}
-
-else {
-
-```
-mostrarLogin();
-```
-
-}
-
+  if (usuario) {
+    carregarSistema();
+  } else {
+    mostrarLogin();
+  }
 };
