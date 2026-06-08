@@ -12,136 +12,172 @@ const id =
 
   parametros.get('id');
 
-async function carregar() {
+function formatarData(dataIso) {
 
-  const resposta =
+  return new Date(
+    dataIso
+  ).toLocaleDateString(
+    'pt-BR'
+  );
 
-    await fetch(
+}
 
-      API_URL +
+function mostrarErro() {
 
-      '?action=validarCertificado&id=' +
+  document.getElementById(
+    'resultado'
+  ).innerHTML = `
 
-      encodeURIComponent(id)
+    <div class="card erro">
 
-    );
+      <div class="titulo erro">
 
-  const dados =
-
-    await resposta.json();
-
-  const div =
-
-    document.getElementById(
-      'resultado'
-    );
-
-  if (!dados.valido) {
-
-    div.innerHTML = `
-
-      <div class="card invalido">
-
-        <div class="titulo">
-
-          ❌ Certificado não encontrado
-
-        </div>
-
-        <p>
-
-          O certificado informado não existe.
-
-        </p>
+        ❌ Certificado não encontrado
 
       </div>
 
-    `;
+      <p>
 
-    return;
+        O certificado informado não existe
+        ou foi invalidado pelo sistema.
 
-  }
+      </p>
 
-  const data =
+    </div>
 
-    new Date(
-      dados.dataEmissao
-    ).toLocaleDateString(
-      'pt-BR'
-    );
+  `;
 
-  div.innerHTML = `
+}
 
-    <div class="card valido">
+function mostrarCertificado(
+  dados
+) {
 
-      <div class="titulo">
+  document.getElementById(
+    'resultado'
+  ).innerHTML = `
+
+    <div class="card sucesso">
+
+      <div class="titulo sucesso">
 
         ✅ Certificado Autêntico
 
       </div>
 
-      <div class="linha">
-        <span class="rotulo">
-          Código:
-        </span>
+      <div class="info">
+
+        <strong>Código:</strong>
+
         ${dados.idCertificado}
+
       </div>
 
-      <div class="linha">
-        <span class="rotulo">
-          Nome:
-        </span>
+      <div class="info">
+
+        <strong>Nome:</strong>
+
         ${dados.nome}
+
       </div>
 
-      <div class="linha">
-        <span class="rotulo">
-          CPF:
-        </span>
+      <div class="info">
+
+        <strong>CPF:</strong>
+
         ${dados.cpf}
+
       </div>
 
-      <div class="linha">
-        <span class="rotulo">
-          Tipo:
-        </span>
+      <div class="info">
+
+        <strong>Tipo:</strong>
+
         ${dados.tipo}
+
       </div>
 
-      <div class="linha">
-        <span class="rotulo">
-          Carga Horária:
-        </span>
+      <div class="info">
+
+        <strong>Carga Horária:</strong>
+
         ${dados.cargaHoraria} h
+
       </div>
 
-      <div class="linha">
-        <span class="rotulo">
-          Ano:
-        </span>
+      <div class="info">
+
+        <strong>Ano:</strong>
+
         ${dados.ano}
+
       </div>
 
-      <div class="linha">
-        <span class="rotulo">
-          Data de Emissão:
-        </span>
-        ${data}
+      <div class="info">
+
+        <strong>Data de Emissão:</strong>
+
+        ${formatarData(
+          dados.dataEmissao
+        )}
+
       </div>
 
-      <div class="rodape">
+      <div class="status">
 
-        Secretaria Municipal de Educação
-
-        <br>
-
-        Tangará da Serra - MT
+        Status: AUTÊNTICO
 
       </div>
 
     </div>
 
   `;
+
+}
+
+async function carregar() {
+
+  try {
+
+    const resposta =
+
+      await fetch(
+
+        API_URL +
+
+        '?action=validarCertificado&id=' +
+
+        encodeURIComponent(id)
+
+      );
+
+    const dados =
+
+      await resposta.json();
+
+    if (
+
+      !dados.valido
+
+    ) {
+
+      mostrarErro();
+
+      return;
+
+    }
+
+    mostrarCertificado(
+      dados
+    );
+
+  }
+
+  catch (erro) {
+
+    mostrarErro();
+
+  }
 
 }
 
