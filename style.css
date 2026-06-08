@@ -326,41 +326,130 @@ border:
 
 .footer{
 
-background:#0F2E5C;
+background:
+linear-gradient(
+90deg,
+#0B2852,
+#123A72
+);
 
 color:white;
 
 display:flex;
 
-justify-content:space-around;
+justify-content:space-between;
 
 align-items:center;
 
-padding:30px;
+padding:35px 60px;
 
 border-top:
 4px solid #D4A017;
 
 margin-top:60px;
 
-text-align:center;
+position:relative;
+
+overflow:hidden;
 
 }
 
 .footer-coluna{
 
-width:33%;
+flex:1;
+
+text-align:center;
+
+padding:0 25px;
+
+position:relative;
+
+}
+.footer-coluna:not(:last-child)::after{
+
+content:'';
+
+position:absolute;
+
+right:0;
+
+top:50%;
+
+transform:translateY(-50%);
+
+width:1px;
+
+height:70px;
+
+background:
+rgba(212,166,42,.6);
 
 }
 
 .brasao-footer{
 
-width:70px;
+width:90px;
+
+margin-bottom:12px;
+
+}
+.footer-secretaria{
+
+font-size:24px;
+
+font-weight:600;
+
+line-height:1.5;
+
+}
+
+.footer-cidade{
+
+font-size:30px;
+
+font-weight:700;
+
+color:#D4A017;
+
+margin-top:6px;
+
+}
+.footer-programa{
+
+font-size:30px;
+
+font-weight:600;
+
+}
+
+.footer-versao{
+
+font-size:24px;
+
+color:#D4A017;
+
+margin-top:8px;
+
+}
+.footer-slogan{
+
+font-size:30px;
+
+font-style:italic;
 
 margin-bottom:10px;
 
 }
 
+.footer-frase{
+
+font-size:24px;
+
+color:#D4A017;
+
+line-height:1.5;
+
+}
 /* =====================================
    RESPONSIVO
 ===================================== */
