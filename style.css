@@ -75,7 +75,7 @@ gap:25px;
 
 .logo-principal{
 
-width:160px;
+width:190px;
 
 }
 
@@ -89,27 +89,76 @@ color:#0F2E5C;
 
 font-size:22px;
 
+letter-spacing:3px;
+
 font-weight:600;
 
-letter-spacing:2px;
+color:#0F2E5C;
+
+text-align:center;
 
 }
 
 .linha-central{
 
-font-size:58px;
+font-size:62px;
 
 font-weight:700;
 
 line-height:1;
 
+color:#0F2E5C;
+
+text-align:center;
+
 }
 
 .linha-inferior{
 
-font-size:24px;
+font-size:22px;
 
-margin-top:10px;
+margin-top:8px;
+
+color:#0F2E5C;
+
+text-align:center;
+
+}
+.ornamento-topo{
+
+text-align:center;
+
+color:#D4A017;
+
+font-size:20px;
+
+margin-bottom:8px;
+
+}
+
+.ornamento-meio{
+
+text-align:center;
+
+color:#D4A017;
+
+font-size:26px;
+
+margin-top:6px;
+
+}
+
+.cidade{
+
+text-align:center;
+
+font-size:26px;
+
+font-weight:700;
+
+color:#3A8D40;
+
+margin-top:8px;
 
 }
 
