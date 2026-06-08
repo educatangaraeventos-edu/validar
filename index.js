@@ -92,9 +92,12 @@ document.getElementById(
 
 <div class="usuario-avatar">
 
-  <span class="icone-usuario">
-    👤
-  </span>
+<div class="usuario-avatar">
+
+  <img
+    src="icone-usuario-dourado.png"
+    class="avatar-img"
+  >
 
 </div>
 
