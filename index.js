@@ -2,25 +2,69 @@ const API_URL =
 
 'https://script.google.com/macros/s/AKfycbxISKb7Sq5bkEYIcs8DTElxV8D93fsfbPZDd1fIlQM-CBl-hoSRb82fk08TY1m9fAtx/exec';
 
-async function consultarPermissao(
+function consultarPermissao(
   email
 ) {
 
-  const resposta =
+  return new Promise(
 
-    await fetch(
+    (resolve, reject) => {
 
-      API_URL +
+      const callbackNome =
 
-      '?action=permissaoEmail&email=' +
+        'callback_' +
 
-      encodeURIComponent(
-        email
-      )
+        Date.now();
 
-    );
+      window[callbackNome] =
 
-  return resposta.json();
+        function(dados) {
+
+          resolve(dados);
+
+          delete window[callbackNome];
+
+          script.remove();
+
+        };
+
+      const script =
+
+        document.createElement(
+          'script'
+        );
+
+      script.src =
+
+        API_URL +
+
+        '?action=permissaoEmail' +
+
+        '&email=' +
+
+        encodeURIComponent(
+          email
+        ) +
+
+        '&callback=' +
+
+        callbackNome;
+
+      script.onerror =
+
+        function() {
+
+          reject();
+
+        };
+
+      document.body.appendChild(
+        script
+      );
+
+    }
+
+  );
 
 }
 
@@ -99,7 +143,9 @@ async function entrar() {
     await consultarPermissao(
       email
     );
-
+console.log(
+  usuario
+);
   if (
 
     usuario.status !==
