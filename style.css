@@ -43,151 +43,133 @@ body{
    HEADER NOVO
 ===================================== */
 
-.header{
+.header-imagem{
+
+position:relative;
+
+width:100%;
 
 background:white;
 
-border-bottom:
-4px solid #D4A017;
+border-bottom:3px solid #D4A017;
 
-padding:20px 50px;
+}
+
+.header-imagem img{
+
+width:100%;
+
+display:block;
+
+}
+.usuario-flutuante{
+
+position:absolute;
+
+top:40px;
+
+right:50px;
+
+z-index:10;
+
+}
+
+.card-usuario{
+
+background:white;
+
+border-radius:22px;
+
+padding:20px 25px;
 
 display:flex;
 
-justify-content:space-between;
-
 align-items:center;
+
+gap:20px;
 
 box-shadow:
-0 4px 15px rgba(0,0,0,.05);
+0 4px 15px rgba(0,0,0,.10);
+
+border:1px solid #ececec;
+
+min-width:520px;
 
 }
 
-.header-esquerda{
+.usuario-avatar{
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+background:#123c77;
+
+color:white;
 
 display:flex;
 
 align-items:center;
 
-gap:25px;
+justify-content:center;
+
+font-size:38px;
 
 }
 
-.logo-principal{
-
-width:190px;
-
-}
-
-.titulo-principal{
-
-color:#0F2E5C;
-
-}
-
-.linha-superior{
-
-font-size:22px;
-
-letter-spacing:3px;
-
-font-weight:600;
-
-color:#0F2E5C;
-
-text-align:center;
-
-}
-
-.linha-central{
-
-font-size:62px;
-
-font-weight:700;
-
-line-height:1;
-
-color:#0F2E5C;
-
-text-align:center;
-
-}
-
-.linha-inferior{
-
-font-size:22px;
-
-margin-top:8px;
-
-color:#0F2E5C;
-
-text-align:center;
-
-}
-.ornamento-topo{
-
-text-align:center;
-
-color:#D4A017;
+.usuario-nome{
 
 font-size:20px;
 
-margin-bottom:8px;
-
-}
-
-.ornamento-meio{
-
-text-align:center;
-
-color:#D4A017;
-
-font-size:26px;
-
-margin-top:6px;
-
-}
-
-.cidade{
-
-text-align:center;
-
-font-size:26px;
-
 font-weight:700;
 
-color:#3A8D40;
+color:#123c77;
+
+}
+
+.usuario-cargo{
+
+font-size:15px;
+
+color:#666;
+
+margin-top:4px;
+
+}
+
+.usuario-boasvindas{
 
 margin-top:8px;
 
-}
+font-size:15px;
 
-.cidade{
+font-weight:600;
 
-color:#3A8D40;
-
-font-size:24px;
-
-font-weight:bold;
-
-margin-top:15px;
+color:#2E7D32;
 
 }
-.usuario-header{
 
-background:white;
+.usuario-sair{
 
-border-radius:24px;
+margin-left:auto;
 
-padding:25px;
+}
 
-min-width:380px;
+.btn-sair-header{
 
-box-shadow:
-0 6px 18px rgba(0,0,0,.08);
+background:none;
 
-border:
-1px solid #ececec;
+border:none;
+
+color:#D4A017;
+
+font-size:18px;
+
+font-weight:700;
+
+cursor:pointer;
 
 }
 /* =====================================
