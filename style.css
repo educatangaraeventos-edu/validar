@@ -1,366 +1,387 @@
-/* ====================================
-   PROGRAMA DE FORMAÇÃO CONTINUADA
-   TANGARÁ DA SERRA - MT
-   ESTILO OFICIAL
-==================================== */
+/* ======================================
+PROGRAMA DE FORMAÇÃO CONTINUADA
+TANGARÁ DA SERRA - MT
+STYLE OFICIAL
+====================================== */
 
-/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-* {
+body{
 
-  margin: 0;
+font-family:Arial, sans-serif;
 
-  padding: 0;
+background:#F5F7FA;
 
-  box-sizing: border-box;
+color:#333;
+
+min-height:100vh;
+
+display:flex;
+flex-direction:column;
 
 }
 
-/* CORES OFICIAIS */
+/* ======================================
+HEADER
+====================================== */
 
-:root {
+.header{
 
-  --azul: #1E5AA8;
+background:#FFFFFF;
 
-  --verde: #3A8D40;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
 
-  --branco: #FFFFFF;
-
-  --cinza-fundo: #F5F7FA;
-
-  --cinza-borda: #D9E1E8;
-
-  --vermelho: #D32F2F;
-
-  --dourado: #C89B3C;
+padding:20px 30px;
 
 }
 
-/* BODY */
+.header-container{
 
-body {
+max-width:1400px;
 
-  font-family: Arial, sans-serif;
+margin:auto;
 
-  background: var(--cinza-fundo);
+display:flex;
 
-  color: #333;
+justify-content:space-between;
 
-  min-height: 100vh;
+align-items:center;
 
-  display: flex;
-
-  flex-direction: column;
+gap:20px;
 
 }
 
-/* HEADER */
+.logo-area{
 
-header {
+display:flex;
 
-  background: var(--branco);
+align-items:center;
 
-  padding: 20px;
-
-  box-shadow:
-    0 2px 8px rgba(0,0,0,.08);
+gap:20px;
 
 }
 
-.header-container {
+.logo{
 
-  max-width: 1200px;
-
-  margin: auto;
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  gap: 20px;
+width:90px;
 
 }
 
-.logo {
+.titulos h1{
 
-  width: 90px;
+color:#1E5AA8;
 
-}
+font-size:34px;
 
-.titulo-sistema {
-
-  flex: 1;
+font-weight:bold;
 
 }
 
-.titulo-sistema h1 {
+.titulos h2{
 
-  color: var(--azul);
+color:#3A8D40;
 
-  font-size: 28px;
+font-size:20px;
 
-}
-
-.titulo-sistema p {
-
-  color: var(--verde);
-
-  margin-top: 4px;
+font-weight:normal;
 
 }
 
-/* USUÁRIO */
+.titulos p{
 
-.usuario {
+color:#666;
 
-  text-align: right;
-
-}
-
-.usuario-nome {
-
-  font-weight: bold;
+margin-top:4px;
 
 }
 
-.usuario-perfil {
+/* ======================================
+USUÁRIO
+====================================== */
 
-  color: #666;
+.usuario-card{
 
-  font-size: 14px;
+background:white;
 
-}
+border-radius:16px;
 
-/* BOTÃO SAIR */
+padding:16px;
 
-.btn-sair {
+min-width:280px;
 
-  margin-top: 8px;
+text-align:right;
 
-  background: var(--vermelho);
-
-  color: white;
-
-  border: none;
-
-  border-radius: 12px;
-
-  padding: 10px 16px;
-
-  cursor: pointer;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
 
 }
 
-/* CONTEÚDO */
+.usuario-email{
 
-main {
+font-size:14px;
 
-  flex: 1;
-
-  width: 100%;
-
-  max-width: 1200px;
-
-  margin: 30px auto;
-
-  padding: 0 20px;
+font-weight:bold;
 
 }
 
-/* GRID DE CARDS */
+.usuario-perfil{
 
-.grid {
+color:#3A8D40;
 
-  display: grid;
+font-size:13px;
 
-  grid-template-columns:
-    repeat(
-      auto-fit,
-      minmax(240px,1fr)
-    );
-
-  gap: 20px;
+margin-top:4px;
 
 }
 
-/* CARD PADRÃO */
+/* ======================================
+BOTÕES
+====================================== */
 
-.card {
+.btn{
 
-  background: white;
+border:none;
 
-  border-radius: 16px;
+border-radius:12px;
 
-  padding: 20px;
+cursor:pointer;
 
-  box-shadow:
-    0 2px 8px rgba(0,0,0,.08);
+padding:12px 20px;
 
-}
+margin-top:10px;
 
-/* CARD MENU */
-
-.card-menu {
-
-  background: white;
-
-  border-radius: 16px;
-
-  padding: 25px;
-
-  text-align: center;
-
-  text-decoration: none;
-
-  color: inherit;
-
-  box-shadow:
-    0 2px 8px rgba(0,0,0,.08);
-
-  transition: .2s;
+font-weight:bold;
 
 }
 
-.card-menu:hover {
+.btn-azul{
 
-  transform: translateY(-3px);
+background:#1E5AA8;
 
-}
-
-/* ÍCONES */
-
-.card-menu img {
-
-  width: 100px;
-
-  margin-bottom: 15px;
+color:white;
 
 }
 
-/* TÍTULO CARD */
+.btn-verde{
 
-.card-menu h3 {
+background:#3A8D40;
 
-  color: var(--azul);
-
-  font-size: 18px;
+color:white;
 
 }
 
-/* BOTÕES */
+.btn-vermelho{
 
-.btn-principal {
+background:#D32F2F;
 
-  background: var(--azul);
-
-  color: white;
-
-  border: none;
-
-  border-radius: 12px;
-
-  height: 48px;
-
-  padding: 0 20px;
-
-  cursor: pointer;
+color:white;
 
 }
 
-.btn-sucesso {
+/* ======================================
+CONTEÚDO
+====================================== */
 
-  background: var(--verde);
+.main{
 
-  color: white;
+flex:1;
 
-  border: none;
+max-width:1400px;
 
-  border-radius: 12px;
+margin:40px auto;
 
-  height: 48px;
+width:100%;
 
-  padding: 0 20px;
-
-  cursor: pointer;
-
-}
-
-.btn-perigo {
-
-  background: var(--vermelho);
-
-  color: white;
-
-  border: none;
-
-  border-radius: 12px;
-
-  height: 48px;
-
-  padding: 0 20px;
-
-  cursor: pointer;
+padding:0 20px;
 
 }
 
-/* CAMPOS */
+/* ======================================
+MENU
+====================================== */
 
-input {
+.menu-grid{
 
-  width: 100%;
+display:grid;
 
-  height: 48px;
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
 
-  border: 1px solid
-    var(--cinza-borda);
-
-  border-radius: 12px;
-
-  padding: 0 15px;
+gap:25px;
 
 }
 
-/* RODAPÉ */
+.menu-card{
 
-footer {
+background:white;
 
-  background: white;
+border-radius:16px;
 
-  padding: 20px;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
 
-  text-align: center;
+padding:30px;
 
-  color: #666;
+text-align:center;
 
-  box-shadow:
-    0 -2px 8px rgba(0,0,0,.04);
+transition:.2s;
+
+cursor:pointer;
 
 }
 
-/* RESPONSIVO */
+.menu-card:hover{
 
-@media (max-width:768px) {
+transform:translateY(-4px);
 
-  .header-container {
+}
 
-    flex-direction: column;
+.menu-card img{
 
-    text-align: center;
+width:120px;
 
-  }
+height:120px;
 
-  .usuario {
+object-fit:contain;
 
-    text-align: center;
+margin-bottom:15px;
 
-  }
+}
 
-  .logo {
+.menu-card h3{
 
-    width: 110px;
+color:#1E5AA8;
 
-  }
+font-size:22px;
+
+}
+
+.menu-card p{
+
+color:#666;
+
+margin-top:8px;
+
+font-size:14px;
+
+}
+
+/* ======================================
+CARDS PADRÃO
+====================================== */
+
+.card{
+
+background:white;
+
+border-radius:16px;
+
+padding:20px;
+
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+}
+
+/* ======================================
+TABELAS
+====================================== */
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+background:white;
+
+border-radius:16px;
+
+overflow:hidden;
+
+}
+
+th{
+
+background:#1E5AA8;
+
+color:white;
+
+padding:14px;
+
+}
+
+td{
+
+padding:12px;
+
+border-bottom:1px solid #D9E1E8;
+
+}
+
+/* ======================================
+FOOTER
+====================================== */
+
+.footer{
+
+margin-top:40px;
+
+text-align:center;
+
+padding:25px;
+
+background:white;
+
+border-top:1px solid #D9E1E8;
+
+color:#666;
+
+}
+
+/* ======================================
+RESPONSIVO
+====================================== */
+
+@media(max-width:768px){
+
+.header-container{
+
+```
+flex-direction:column;
+
+text-align:center;
+```
+
+}
+
+.usuario-card{
+
+```
+width:100%;
+
+text-align:center;
+```
+
+}
+
+.titulos h1{
+
+```
+font-size:28px;
+```
+
+}
+
+.menu-card img{
+
+```
+width:100px;
+
+height:100px;
+```
+
+}
 
 }
