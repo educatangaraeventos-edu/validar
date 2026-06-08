@@ -1,387 +1,431 @@
-/* ======================================
-PROGRAMA DE FORMAÇÃO CONTINUADA
-TANGARÁ DA SERRA - MT
-STYLE OFICIAL
-====================================== */
+/* =====================================
+   PROGRAMA DE FORMAÇÃO CONTINUADA
+   TANGARÁ DA SERRA - MT
+===================================== */
+
+:root{
+
+  --azul:#1E5AA8;
+  --azul-escuro:#0F3F7A;
+  --verde:#3A8D40;
+  --dourado:#D4A62A;
+
+  --fundo:#F5F7FA;
+  --borda:#D9E1E8;
+  --branco:#FFFFFF;
+
+}
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 body{
 
-font-family:Arial, sans-serif;
+  font-family:Arial,sans-serif;
 
-background:#F5F7FA;
+  background:
+  var(--fundo);
 
-color:#333;
+  color:#333;
 
-min-height:100vh;
+  min-height:100vh;
 
-display:flex;
-flex-direction:column;
+  display:flex;
+
+  flex-direction:column;
 
 }
 
-/* ======================================
-HEADER
-====================================== */
+/* =====================================
+   HEADER
+===================================== */
 
 .header{
 
-background:#FFFFFF;
+  background:white;
 
-box-shadow:0 2px 8px rgba(0,0,0,.08);
+  border-bottom:
+  4px solid var(--dourado);
 
-padding:20px 30px;
+  box-shadow:
+  0 2px 8px rgba(0,0,0,.08);
 
 }
 
 .header-container{
 
-max-width:1400px;
+  max-width:1400px;
 
-margin:auto;
+  margin:auto;
 
-display:flex;
+  padding:20px 30px;
 
-justify-content:space-between;
+  display:flex;
 
-align-items:center;
+  justify-content:space-between;
 
-gap:20px;
+  align-items:center;
 
 }
 
 .logo-area{
 
-display:flex;
+  display:flex;
 
-align-items:center;
+  align-items:center;
 
-gap:20px;
+  gap:18px;
 
 }
 
 .logo{
 
-width:90px;
+  width:90px;
 
 }
 
 .titulos h1{
 
-color:#1E5AA8;
+  color:var(--azul);
 
-font-size:34px;
+  font-size:34px;
 
-font-weight:bold;
+  font-weight:700;
 
 }
 
 .titulos h2{
 
-color:#3A8D40;
+  color:var(--verde);
 
-font-size:20px;
+  font-size:20px;
 
-font-weight:normal;
+  margin-top:4px;
 
 }
 
 .titulos p{
 
-color:#666;
+  color:#666;
 
-margin-top:4px;
+  margin-top:4px;
 
 }
 
-/* ======================================
-USUÁRIO
-====================================== */
-
 .usuario-card{
 
-background:white;
+  background:white;
 
-border-radius:16px;
+  border:
 
-padding:16px;
+  1px solid var(--borda);
 
-min-width:280px;
+  border-radius:16px;
 
-text-align:right;
+  padding:16px;
 
-box-shadow:0 2px 8px rgba(0,0,0,.08);
+  text-align:right;
+
+  min-width:260px;
 
 }
 
 .usuario-email{
 
-font-size:14px;
+  font-weight:bold;
 
-font-weight:bold;
+  color:var(--azul);
 
 }
 
 .usuario-perfil{
 
-color:#3A8D40;
+  color:#666;
 
-font-size:13px;
-
-margin-top:4px;
+  margin-top:4px;
 
 }
 
-/* ======================================
-BOTÕES
-====================================== */
+/* =====================================
+   MAIN
+===================================== */
+
+.main{
+
+  flex:1;
+
+  max-width:1400px;
+
+  width:100%;
+
+  margin:auto;
+
+  padding:40px 30px;
+
+}
+
+/* =====================================
+   CARD
+===================================== */
+
+.card{
+
+  background:white;
+
+  border-radius:16px;
+
+  padding:24px;
+
+  box-shadow:
+  0 2px 8px rgba(0,0,0,.08);
+
+}
+
+/* =====================================
+   BOTÕES
+===================================== */
 
 .btn{
 
-border:none;
+  border:none;
 
-border-radius:12px;
+  cursor:pointer;
 
-cursor:pointer;
+  height:48px;
 
-padding:12px 20px;
+  padding:0 20px;
 
-margin-top:10px;
+  border-radius:12px;
 
-font-weight:bold;
+  color:white;
+
+  font-weight:bold;
 
 }
 
 .btn-azul{
 
-background:#1E5AA8;
-
-color:white;
+  background:var(--azul);
 
 }
 
 .btn-verde{
 
-background:#3A8D40;
-
-color:white;
+  background:var(--verde);
 
 }
 
 .btn-vermelho{
 
-background:#D32F2F;
-
-color:white;
+  background:#D32F2F;
 
 }
 
-/* ======================================
-CONTEÚDO
-====================================== */
-
-.main{
-
-flex:1;
-
-max-width:1400px;
-
-margin:40px auto;
-
-width:100%;
-
-padding:0 20px;
-
-}
-
-/* ======================================
-MENU
-====================================== */
+/* =====================================
+   MENU
+===================================== */
 
 .menu-grid{
 
-display:grid;
+  display:grid;
 
-grid-template-columns:
-repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns:
+  repeat(auto-fit,minmax(260px,1fr));
 
-gap:25px;
+  gap:24px;
 
 }
 
 .menu-card{
 
-background:white;
+  background:white;
 
-border-radius:16px;
+  border-radius:20px;
 
-box-shadow:0 2px 8px rgba(0,0,0,.08);
+  overflow:hidden;
 
-padding:30px;
+  cursor:pointer;
 
-text-align:center;
+  transition:.3s;
 
-transition:.2s;
-
-cursor:pointer;
+  box-shadow:
+  0 2px 8px rgba(0,0,0,.08);
 
 }
 
 .menu-card:hover{
 
-transform:translateY(-4px);
+  transform:
+  translateY(-6px);
+
+  box-shadow:
+  0 12px 24px rgba(0,0,0,.12);
 
 }
 
-.menu-card img{
+.menu-conteudo{
 
-width:120px;
+  padding:30px;
 
-height:120px;
-
-object-fit:contain;
-
-margin-bottom:15px;
+  text-align:center;
 
 }
 
-.menu-card h3{
+.menu-conteudo img{
 
-color:#1E5AA8;
+  width:130px;
 
-font-size:22px;
+  height:130px;
 
-}
-
-.menu-card p{
-
-color:#666;
-
-margin-top:8px;
-
-font-size:14px;
+  object-fit:contain;
 
 }
 
-/* ======================================
-CARDS PADRÃO
-====================================== */
+.menu-conteudo h3{
 
-.card{
+  color:var(--azul);
 
-background:white;
+  margin-top:15px;
 
-border-radius:16px;
-
-padding:20px;
-
-box-shadow:0 2px 8px rgba(0,0,0,.08);
+  font-size:22px;
 
 }
 
-/* ======================================
-TABELAS
-====================================== */
+.menu-conteudo p{
 
-table{
+  color:#666;
 
-width:100%;
+  margin-top:8px;
 
-border-collapse:collapse;
-
-background:white;
-
-border-radius:16px;
-
-overflow:hidden;
+  line-height:1.5;
 
 }
 
-th{
+.menu-faixa{
 
-background:#1E5AA8;
+  height:6px;
 
-color:white;
-
-padding:14px;
+  background:var(--dourado);
 
 }
 
-td{
+/* =====================================
+   LOGIN
+===================================== */
 
-padding:12px;
+.login-container{
 
-border-bottom:1px solid #D9E1E8;
+  max-width:500px;
+
+  margin:80px auto;
 
 }
 
-/* ======================================
-FOOTER
-====================================== */
+.login-card{
+
+  background:white;
+
+  border-radius:20px;
+
+  padding:40px;
+
+  box-shadow:
+  0 4px 12px rgba(0,0,0,.08);
+
+  text-align:center;
+
+}
+
+.login-card img{
+
+  width:120px;
+
+}
+
+.login-card h2{
+
+  margin-top:20px;
+
+  color:var(--azul);
+
+}
+
+.login-card input{
+
+  width:100%;
+
+  margin-top:20px;
+
+  padding:14px;
+
+  border:
+
+  1px solid var(--borda);
+
+  border-radius:12px;
+
+}
+
+/* =====================================
+   FOOTER
+===================================== */
 
 .footer{
 
-margin-top:40px;
+  background:
+  var(--azul);
 
-text-align:center;
+  color:white;
 
-padding:25px;
+  text-align:center;
 
-background:white;
+  padding:30px;
 
-border-top:1px solid #D9E1E8;
-
-color:#666;
-
-}
-
-/* ======================================
-RESPONSIVO
-====================================== */
-
-@media(max-width:768px){
-
-.header-container{
-
-```
-flex-direction:column;
-
-text-align:center;
-```
+  border-top:
+  4px solid var(--dourado);
 
 }
 
-.usuario-card{
+.footer img{
 
-```
-width:100%;
+  width:70px;
 
-text-align:center;
-```
+  margin-bottom:12px;
 
 }
 
-.titulos h1{
+/* =====================================
+   RESPONSIVO
+===================================== */
 
-```
-font-size:28px;
-```
+@media(max-width:900px){
+
+  .header-container{
+
+    flex-direction:column;
+
+    gap:20px;
+
+    text-align:center;
+
+  }
+
+  .usuario-card{
+
+    width:100%;
+
+    text-align:center;
+
+  }
+
+  .titulos h1{
+
+    font-size:26px;
+
+  }
 
 }
 
-.menu-card img{
-
-```
-width:100px;
-
-height:100px;
-```
-
-}
-
-}
