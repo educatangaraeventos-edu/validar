@@ -105,10 +105,8 @@ body{
 
 .usuario-avatar{
 
-  width:80px;
-
-  height:80px;
-
+  width:65px;
+  height:65px;
   display:flex;
 
   align-items:center;
@@ -128,7 +126,7 @@ body{
 }
 .usuario-info{
 
-  flex:1;
+  flex:2;
 
 }
 
@@ -176,28 +174,19 @@ body{
 
 .btn-sair-header{
 
-  background:linear-gradient(
-    180deg,
-    #F2D16B,
-    #D4A017
-  );
-
-  color:white;
+  background:none;
 
   border:none;
 
-  border-radius:14px;
+  color:#D4A017;
 
-  padding:10px 14px;
-
-  font-size:16px;
+  font-size:20px;
 
   font-weight:700;
 
   cursor:pointer;
 
-  box-shadow:
-  0 3px 8px rgba(212,160,23,.35);
+  padding:0;
 
 }
 /* =====================================
@@ -491,17 +480,18 @@ body{
 
 }
 
-  .avatar-img{
+.avatar-img{
 
-    width:85px;
+  width:60px;
+  height:60px;
 
-    height:85px;
-
-  }
+}
 
 .usuario-nome{
 
-  font-size:28px;
+  font-size:18px;
+
+  line-height:1.1;
 
   font-weight:700;
 
