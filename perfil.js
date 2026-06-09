@@ -1,3 +1,6 @@
+const API_URL =
+'https://script.google.com/macros/s/AKfycbxISKb7Sq5bkEYIcs8DTElxV8D93fsfbPZDd1fIlQM-CBl-hoSRb82fk08TY1m9fAtx/exec';
+
 function voltarInicio() {
 
   window.location.href =
@@ -5,7 +8,7 @@ function voltarInicio() {
 
 }
 
-function carregarPerfil() {
+async function carregarPerfil() {
 
   const usuario = JSON.parse(
     localStorage.getItem('usuario')
@@ -20,58 +23,109 @@ function carregarPerfil() {
 
   }
 
-  const nome =
-    usuario.NOME ||
-    usuario.nome ||
-    'Não informado';
-
-  const cargo =
-    usuario.PERFIL ||
-    usuario.perfil ||
-    'Não informado';
-
-  const escola =
-    usuario.ESCOLA ||
-    usuario.escola ||
-    'Não informado';
-
   const email =
+
     usuario.EMAIL ||
+
     usuario.email ||
-    'Não informado';
 
-  const status =
-    usuario.STATUS ||
-    usuario.status ||
-    'Não informado';
+    '';
 
-  document.getElementById(
-    'nomeUsuario'
-  ).textContent = nome;
+  try {
 
-  document.getElementById(
-    'cargoUsuario'
-  ).textContent = cargo;
+    const resposta =
 
-  document.getElementById(
-    'perfilNome'
-  ).textContent = nome;
+      await fetch(
 
-  document.getElementById(
-    'perfilCargo'
-  ).textContent = cargo;
+        API_URL +
 
-  document.getElementById(
-    'perfilEscola'
-  ).textContent = escola;
+        '?action=servidorEmail&email=' +
 
-  document.getElementById(
-    'perfilEmail'
-  ).textContent = email;
+        encodeURIComponent(email)
 
-  document.getElementById(
-    'perfilStatus'
-  ).textContent = status;
+      );
+
+    const servidor =
+
+      await resposta.json();
+
+    document.getElementById(
+      'nomeUsuario'
+    ).textContent =
+      servidor.nome || '-';
+
+    document.getElementById(
+      'cargoUsuario'
+    ).textContent =
+      servidor.cargo || '-';
+
+    document.getElementById(
+      'perfilNome'
+    ).textContent =
+      servidor.nome || '-';
+
+    document.getElementById(
+      'perfilCargo'
+    ).textContent =
+      servidor.cargo || '-';
+
+    document.getElementById(
+      'perfilEscola'
+    ).textContent =
+      servidor.escola || '-';
+
+    document.getElementById(
+      'perfilEmail'
+    ).textContent =
+      servidor.email || '-';
+
+    document.getElementById(
+      'perfilStatus'
+    ).textContent =
+      servidor.status || '-';
+
+    const btnCracha =
+      document.getElementById(
+        'btnCracha'
+      );
+
+    if (
+      servidor.crachaLink
+    ) {
+
+      btnCracha.onclick =
+        function() {
+
+          window.open(
+            servidor.crachaLink,
+            '_blank'
+          );
+
+        };
+
+    } else {
+
+      btnCracha.disabled =
+        true;
+
+      btnCracha.textContent =
+        'Crachá indisponível';
+
+    }
+
+  }
+
+  catch (erro) {
+
+    console.error(
+      erro
+    );
+
+    alert(
+      'Erro ao carregar perfil.'
+    );
+
+  }
 
 }
 
