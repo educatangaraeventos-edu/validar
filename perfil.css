@@ -149,6 +149,8 @@ body{
 
   flex:1;
 
+  overflow-x:hidden;
+
 }
 
 .bloco{
@@ -166,8 +168,11 @@ body{
   box-shadow:
   0 4px 12px rgba(0,0,0,.05);
 
-}
+  width:100%;
 
+  overflow:hidden;
+
+}
 .bloco h2{
 
   color:var(--azul);
@@ -387,7 +392,21 @@ body{
 ========================== */
 
 @media(max-width:768px){
+.main{
 
+  padding:15px;
+
+}
+
+.bloco{
+
+  width:100%;
+
+  padding:18px;
+
+  margin-bottom:18px;
+
+}
   .header-imagem{
 
     display:flex;
