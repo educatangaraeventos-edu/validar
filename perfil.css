@@ -248,7 +248,36 @@ body{
 /* ==========================
    RODAPÉ
 ========================== */
+.footer-institucional{
 
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:12px;
+
+}
+
+.brasao-footer{
+
+  width:70px;
+
+}
+
+.footer-cidade,
+.footer-programa,
+.footer-versao,
+.footer-slogan{
+
+  color:#D4A017;
+
+}
+
+.footer{
+  overflow:hidden;
+}
 .footer{
 
   background:linear-gradient(
