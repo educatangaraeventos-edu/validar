@@ -77,14 +77,11 @@ function carregarSistema() {
     usuario.nomeCompleto ||
     usuario.nome ||
     usuario.NOME ||
-    usuario.email ||
     'Usuário';
 
   const cargoUsuario =
     usuario.CARGO ||
     usuario.cargo ||
-    usuario.perfil ||
-    usuario.PERFIL ||
     'Servidor';
 
   document.getElementById('usuarioArea').innerHTML = `
