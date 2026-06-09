@@ -146,23 +146,23 @@ function carregarSistema() {
 
     <div class="usuario-info">
 
-      <div class="usuario-nome">
+<div class="usuario-nome">
 
-        ${usuario.nome || usuario.NOME || 'Usuário'}
+  ${usuario.nome || usuario.NOME || 'Roselaine Mezz'}
 
-      </div>
+</div>
 
-      <div class="usuario-cargo">
+<div class="usuario-cargo">
 
-        ${usuario.perfil || usuario.PERFIL || 'Servidor'}
+  Administrador do Sistema
 
-      </div>
+</div>
 
-      <div class="usuario-boasvindas">
+<div class="usuario-boasvindas">
 
-        Bem-vindo(a)!
+  Bem-vindo(a)!
 
-      </div>
+</div>
 
     </div>
 
