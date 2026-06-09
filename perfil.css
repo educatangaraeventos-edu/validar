@@ -244,7 +244,69 @@ body{
   text-align:center;
 
 }
+/* =====================================
+   MARCAS D'ÁGUA
+===================================== */
 
+.marca-esquerda{
+
+  position:fixed;
+
+  left:-160px;
+
+  top:55%;
+
+  width:420px;
+
+  height:420px;
+
+  background-image:url('cropped-brasao.png');
+
+  background-repeat:no-repeat;
+
+  background-position:center;
+
+  background-size:contain;
+
+  opacity:.025;
+
+  transform:
+  translateY(-50%)
+  rotate(-45deg);
+
+  pointer-events:none;
+
+}
+
+.marca-direita{
+
+  position:fixed;
+
+  right:-160px;
+
+  top:55%;
+
+  width:420px;
+
+  height:420px;
+
+  background-image:url('logo-programa.png');
+
+  background-repeat:no-repeat;
+
+  background-position:center;
+
+  background-size:contain;
+
+  opacity:.025;
+
+  transform:
+  translateY(-50%)
+  rotate(45deg);
+
+  pointer-events:none;
+
+}
 /* =====================================
    FOOTER
 ===================================== */
