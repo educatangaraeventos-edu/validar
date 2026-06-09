@@ -125,15 +125,59 @@ document.getElementById(
     ).textContent =
       servidor.status || '-';
     
+let matricula =
+  String(
+    servidor.matricula || ''
+  );
+
+matricula =
+  matricula.replace(
+    /\D/g,
+    ''
+  );
+
+if (matricula.length > 1) {
+
+  matricula =
+    matricula.slice(0, -1) +
+    '-' +
+    matricula.slice(-1);
+
+}
+
 document.getElementById(
   'perfilMatricula'
 ).textContent =
-  servidor.matricula || '-';
+  matricula || '-';
+
+let telefone =
+  String(
+    servidor.telefone || ''
+  );
+    
+    telefone =
+  telefone.replace(
+    /\D/g,
+    ''
+  );
+
+if (telefone.length === 11) {
+
+  telefone =
+    '(' +
+    telefone.substring(0,2) +
+    ') ' +
+    telefone.substring(2,7) +
+    '-' +
+    telefone.substring(7);
+
+}
 
 document.getElementById(
   'perfilTelefone'
 ).textContent =
-  servidor.telefone || '-';
+  telefone || '-';
+    
     const btnCracha =
       document.getElementById(
         'btnCracha'
