@@ -84,56 +84,46 @@ body{
 
   background:white;
 
-  border-radius:24px;
+  border:2px solid #D4A017;
 
-  padding:18px 24px;
+  border-radius:20px;
+
+  padding:16px 22px;
 
   display:flex;
 
   align-items:center;
 
-  gap:18px;
+  justify-content:space-between;
 
-  width:520px;
+  gap:20px;
 
-  border:1px solid #E6E6E6;
+  min-width:420px;
 
   box-shadow:
   0 6px 18px rgba(0,0,0,.10);
 
 }
-
-.usuario-avatar{
-  width:auto;
-  min-width:auto;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-}
-
-.avatar-img{
-
-  width:72px;
-
-  height:72px;
-
-  object-fit:contain;
-
-}
 .usuario-info{
 
-  flex:2;
+  flex:1;
+
+}
+.usuario-sair{
+
+  margin-left:auto;
 
 }
 
 .usuario-nome{
 
-  font-size:24px;
+  font-size:20px;
 
   font-weight:700;
 
   color:#123C77;
+
+  line-height:1.1;
 
 }
 
@@ -447,7 +437,7 @@ body{
 
   min-width:auto;
 
-  padding:18px;
+  padding:14px 18px;
 
   display:flex;
 
@@ -455,17 +445,9 @@ body{
 
   justify-content:space-between;
 
-  gap:12px;
+  gap:8px;
 
 }
-.usuario-avatar{
-
-  order:1;
-
-  flex-shrink:0;
-
-}
-
 .usuario-info{
 
   order:2;
@@ -480,12 +462,6 @@ body{
 
 }
 
-.avatar-img{
-
-  width:72px;
-  height:72px;
-
-}
 .usuario-nome{
 
   font-size:15px;
