@@ -84,22 +84,22 @@ body{
 
   background:white;
 
-  border-radius:18px;
+  border-radius:24px;
 
-  padding:16px 22px;
+  padding:18px 24px;
 
   display:flex;
 
   align-items:center;
 
-  gap:16px;
+  gap:18px;
 
-  min-width:380px;
+  width:520px;
 
-  border:1px solid #E7E7E7;
+  border:1px solid #E6E6E6;
 
   box-shadow:
-  0 4px 14px rgba(0,0,0,.08);
+  0 6px 18px rgba(0,0,0,.10);
 
 }
 
@@ -114,8 +114,9 @@ body{
 
 .avatar-img{
 
-  width:70px;
-  height:70px;
+  width:72px;
+
+  height:72px;
 
   object-fit:contain;
 
@@ -176,13 +177,11 @@ body{
 
   color:#D4A017;
 
-  font-size:24px;
+  font-size:22px;
 
   font-weight:700;
 
   cursor:pointer;
-
-  padding:0;
 
 }
 /* =====================================
@@ -683,15 +682,15 @@ font-weight:700;
 
   }
 
-  .card-usuario{
+.card-usuario{
 
-    width:95%;
+  width:95%;
 
-    min-width:unset;
+  padding:20px;
 
-    padding:24px;
+  gap:12px;
 
-  }
+}
 
   .usuario-nome{
 
@@ -754,17 +753,29 @@ font-weight:700;
     display:none;
 .usuario-avatar{
 
-  width:100px;
-  min-width:100px;
+  order:2;
+
+}
+.usuario-info{
+
+  order:1;
+
+  flex:1;
 
 }
 
-.avatar-img{
+.usuario-sair{
 
-  width:80px;
-  height:80px;
+  order:3;
 
 }
+
+  .avatar-img{
+
+    width:85px;
+
+    height:85px;
+
   }
 
 }
