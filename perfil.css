@@ -1,0 +1,355 @@
+:root{
+
+  --azul:#123C77;
+  --azul-escuro:#0B2852;
+  --verde:#2E7D32;
+  --dourado:#D4A017;
+  --fundo:#F5F7FA;
+  --branco:#FFFFFF;
+
+}
+
+*{
+
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+
+}
+
+body{
+
+  font-family:Arial,sans-serif;
+  background:var(--fundo);
+  min-height:100vh;
+
+  display:flex;
+  flex-direction:column;
+
+}
+
+/* ==========================
+   CABEÇALHO
+========================== */
+
+.header-imagem{
+
+  position:relative;
+
+  background:white;
+
+  border-bottom:3px solid var(--dourado);
+
+  padding:12px 30px;
+
+}
+
+.header-imagem img{
+
+  height:120px;
+
+  display:block;
+
+}
+
+/* ==========================
+   USUÁRIO
+========================== */
+
+.usuario-flutuante{
+
+  position:absolute;
+
+  right:20px;
+
+  top:50%;
+
+  transform:translateY(-50%);
+
+}
+
+.card-usuario{
+
+  background:white;
+
+  border:2px solid var(--dourado);
+
+  border-radius:18px;
+
+  padding:14px 20px;
+
+  min-width:420px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:20px;
+
+  box-shadow:
+  0 4px 12px rgba(0,0,0,.08);
+
+}
+
+.usuario-info{
+
+  flex:1;
+
+}
+
+.usuario-nome{
+
+  color:var(--azul);
+
+  font-size:20px;
+
+  font-weight:700;
+
+}
+
+.usuario-cargo{
+
+  color:#666;
+
+  font-size:14px;
+
+}
+
+.btn-voltar{
+
+  border:none;
+
+  background:none;
+
+  color:var(--dourado);
+
+  font-size:18px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+}
+
+/* ==========================
+   CONTEÚDO
+========================== */
+
+.main{
+
+  width:100%;
+
+  max-width:1400px;
+
+  margin:auto;
+
+  padding:30px 20px;
+
+  flex:1;
+
+}
+
+.bloco{
+
+  background:white;
+
+  border:2px solid rgba(212,160,23,.5);
+
+  border-radius:24px;
+
+  padding:25px;
+
+  margin-bottom:25px;
+
+  box-shadow:
+  0 4px 12px rgba(0,0,0,.05);
+
+}
+
+.bloco h2{
+
+  color:var(--azul);
+
+  margin-bottom:20px;
+
+}
+
+/* ==========================
+   DADOS
+========================== */
+
+.dados-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,1fr);
+
+  gap:18px;
+
+}
+
+.dados-grid div{
+
+  background:#FAFAFA;
+
+  border-radius:12px;
+
+  padding:12px;
+
+}
+
+/* ==========================
+   CARDS SIMPLES
+========================== */
+
+.card-simples{
+
+  display:flex;
+
+  justify-content:center;
+
+}
+
+.btn-acao{
+
+  border:none;
+
+  background:var(--azul);
+
+  color:white;
+
+  padding:14px 24px;
+
+  border-radius:12px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+}
+
+/* ==========================
+   LISTAS
+========================== */
+
+.lista-vazia{
+
+  color:#777;
+
+  padding:20px;
+
+  text-align:center;
+
+}
+
+/* ==========================
+   RODAPÉ
+========================== */
+
+.footer{
+
+  background:linear-gradient(
+    90deg,
+    #0B2852,
+    #123A72
+  );
+
+  color:white;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  padding:25px;
+
+  border-top:4px solid var(--dourado);
+
+}
+
+.footer-coluna{
+
+  flex:1;
+
+  text-align:center;
+
+}
+
+/* ==========================
+   CELULAR
+========================== */
+
+@media(max-width:768px){
+
+  .header-imagem{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    padding:10px;
+
+  }
+
+  .header-imagem img{
+
+    width:95%;
+
+    height:auto;
+
+  }
+
+  .usuario-flutuante{
+
+    position:relative;
+
+    top:auto;
+    right:auto;
+
+    transform:none;
+
+    width:100%;
+
+    margin-top:12px;
+
+  }
+
+  .card-usuario{
+
+    width:100%;
+
+    min-width:auto;
+
+  }
+
+  .usuario-nome{
+
+    font-size:16px;
+
+  }
+
+  .usuario-cargo{
+
+    font-size:12px;
+
+  }
+
+  .dados-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .footer{
+
+    flex-direction:column;
+
+    gap:15px;
+
+  }
+
+}
