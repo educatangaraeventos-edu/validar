@@ -139,13 +139,13 @@ document.getElementById(
 
     <div class="usuario-nome">
 
-      ${usuario.nome || usuario.NOME || 'Usuário'}
+      ${usuario.NOME_COMPLETO || usuario.nome || usuario.NOME || 'Usuário'}
 
     </div>
 
-    <div class="usuario-cargo">
-
-      ${usuario.perfil || usuario.PERFIL || 'Servidor'}
+  <div class="usuario-cargo">
+    ${usuario.CARGO || usuario.PERFIL || 'Servidor'}
+  </div>
 
     </div>
 
