@@ -199,6 +199,17 @@ body{
 
   padding:12px;
 
+  word-break:break-word;
+
+  overflow-wrap:break-word;
+
+}
+.dados-grid span{
+
+  word-break:break-word;
+
+  overflow-wrap:break-word;
+
 }
 
 /* ==========================
@@ -412,13 +423,17 @@ body{
 
   }
 
-  .card-usuario{
+.card-usuario{
 
-    width:100%;
+  width:100%;
 
-    min-width:auto;
+  min-width:auto;
 
-  }
+  padding:16px;
+
+  gap:12px;
+
+}
 
   .usuario-nome{
 
@@ -426,11 +441,21 @@ body{
 
   }
 
-  .usuario-cargo{
+.usuario-info{
 
-    font-size:12px;
+  flex:1;
 
-  }
+  min-width:0;
+
+}
+
+.btn-voltar{
+
+  font-size:16px;
+
+  white-space:nowrap;
+
+}
 
   .dados-grid{
 
