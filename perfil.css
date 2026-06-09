@@ -92,7 +92,27 @@ body{
   0 4px 12px rgba(0,0,0,.08);
 
 }
+.usuario-foto{
 
+  flex-shrink:0;
+
+}
+
+.usuario-foto img{
+
+  width:70px;
+
+  height:70px;
+
+  border-radius:50%;
+
+  object-fit:cover;
+
+  border:3px solid var(--dourado);
+
+  background:white;
+
+}
 .usuario-info{
 
   flex:1;
@@ -392,7 +412,14 @@ body{
 ========================== */
 
 @media(max-width:768px){
-.main{
+.usuario-foto img{
+
+  width:58px;
+
+  height:58px;
+
+}
+  .main{
 
   padding:15px;
 
