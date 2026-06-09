@@ -115,9 +115,9 @@ body{
 
 .usuario-avatar{
 
-  width:70px;
+  width:90px;
 
-  height:70px;
+  height:90px;
 
   display:flex;
 
@@ -129,14 +129,13 @@ body{
 
 .avatar-img{
 
-  width:60px;
+  width:85px;
 
-  height:60px;
+  height:85px;
 
   object-fit:contain;
 
 }
-
 .usuario-info{
 
   flex:1;
@@ -468,19 +467,28 @@ body{
 
   }
 
-  .card-usuario{
+.card-usuario{
 
-    width:94%;
+  background:white;
 
-    min-width:auto;
+  border-radius:24px;
 
-    padding:14px 16px;
+  padding:18px 30px;
 
-    border-radius:22px;
+  display:flex;
 
-    gap:12px;
+  align-items:center;
 
-  }
+  gap:24px;
+
+  min-width:520px;
+
+  border:1px solid #E8E8E8;
+
+  box-shadow:
+  0 8px 24px rgba(0,0,0,.08);
+
+}
 
   .avatar-img{
 
@@ -490,11 +498,15 @@ body{
 
   }
 
-  .usuario-nome{
+.usuario-nome{
 
-    font-size:24px;
+  font-size:28px;
 
-  }
+  font-weight:700;
+
+  color:#123C77;
+
+}
 
   .usuario-cargo{
 
