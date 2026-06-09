@@ -96,20 +96,20 @@ body{
 
   border-radius:24px;
 
-  padding:18px 24px;
+  padding:18px 30px;
 
   display:flex;
 
   align-items:center;
 
-  gap:18px;
+  gap:20px;
 
-  min-width:500px;
+  min-width:650px;
 
-  border:1px solid #E6E6E6;
+  border:1px solid #E8E8E8;
 
   box-shadow:
-  0 6px 18px rgba(0,0,0,.10);
+  0 8px 24px rgba(0,0,0,.08);
 
 }
 
@@ -145,17 +145,17 @@ body{
 
 .usuario-nome{
 
-  font-size:18px;
+  font-size:24px;
 
   font-weight:700;
 
-  color:var(--azul);
+  color:#123C77;
 
 }
 
 .usuario-cargo{
 
-  font-size:15px;
+  font-size:16px;
 
   color:#666;
 
@@ -169,7 +169,7 @@ body{
 
   font-weight:600;
 
-  color:var(--verde);
+  color:#2E7D32;
 
   margin-top:8px;
 
