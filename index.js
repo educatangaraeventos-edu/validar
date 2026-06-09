@@ -139,7 +139,7 @@ document.getElementById(
 
     <div class="usuario-nome">
 
-      ${usuario.NOME_COMPLETO || usuario.nome || usuario.NOME || 'Usuário'}
+      ${usuario.NOME_COMPLETO || 'Usuário'}
 
     </div>
 
