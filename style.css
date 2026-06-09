@@ -219,25 +219,42 @@ body{
   display:grid;
 
   grid-template-columns:
-  repeat(auto-fit,minmax(260px,1fr));
+  repeat(3, 260px);
 
-  justify-items:center;
+  justify-content:center;
 
-  gap:30px;
+  gap:34px;
 
 }
 
 .menu-card{
 
-  background:transparent;
+  width:260px;
 
-  border:none;
+  height:220px;
 
-  box-shadow:none;
+  background:white;
+
+  border:2px solid rgba(212,160,23,.65);
+
+  border-radius:26px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:14px;
+
+  box-shadow:
+  0 8px 22px rgba(0,0,0,.08);
 
   transition:.25s;
 
   cursor:pointer;
+
+  overflow:hidden;
 
 }
 
@@ -247,11 +264,16 @@ body{
   translateY(-6px)
   scale(1.03);
 
+  box-shadow:
+  0 14px 32px rgba(0,0,0,.12);
+
+  border-color:#D4A017;
+
 }
 
 .icone-menu{
 
-  width:240px;
+  width:220px;
 
   height:auto;
 
@@ -509,7 +531,34 @@ body{
 ===================================== */
 
 @media(max-width:768px){
+  .menu-grid{
 
+    grid-template-columns:
+    repeat(2, 1fr);
+
+    gap:22px;
+
+    justify-items:center;
+
+  }
+
+  .menu-card{
+
+    width:160px;
+
+    height:145px;
+
+    border-radius:22px;
+
+    padding:8px;
+
+  }
+
+  .icone-menu{
+
+    width:140px;
+
+  }
   .footer{
 
     flex-direction:column;
