@@ -518,3 +518,88 @@ body{
   }
 
 }
+/* ==========================
+   CARD DO SERVIDOR
+========================== */
+
+.servidor-card{
+
+  display:flex;
+
+  gap:30px;
+
+  align-items:flex-start;
+
+}
+
+.servidor-foto img{
+
+  width:150px;
+
+  height:180px;
+
+  object-fit:cover;
+
+  border-radius:18px;
+
+  border:3px solid var(--dourado);
+
+  background:white;
+
+}
+
+.servidor-info{
+
+  flex:1;
+
+}
+
+.linha-dado{
+
+  background:#FAFAFA;
+
+  border-radius:12px;
+
+  padding:14px;
+
+  margin-bottom:12px;
+
+  font-size:16px;
+
+}
+
+.linha-dado strong{
+
+  color:#000;
+
+}
+
+/* ==========================
+   CELULAR
+========================== */
+
+@media(max-width:768px){
+
+  .servidor-card{
+
+    flex-direction:column;
+
+    align-items:center;
+
+  }
+
+  .servidor-foto img{
+
+    width:130px;
+
+    height:160px;
+
+  }
+
+  .servidor-info{
+
+    width:100%;
+
+  }
+
+}
