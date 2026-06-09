@@ -159,15 +159,6 @@ body{
 
 }
 
-.usuario-divisor{
-
-  width:1px;
-
-  height:70px;
-
-  background:#DDD;
-
-}
 
 .btn-sair-header{
 
@@ -483,11 +474,11 @@ body{
 
 }
 
-  .usuario-sair{
+.usuario-sair{
 
-    order:3;
+  margin-left:auto;
 
-  }
+}
 
 .avatar-img{
 
