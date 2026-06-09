@@ -420,110 +420,105 @@ body{
 
   .header-imagem{
 
-    justify-content:center;
-
-    padding:8px 10px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:10px;
 
   }
 
   .header-imagem img{
 
-    width:92%;
-
+    width:95%;
     height:auto;
-
-    max-width:92%;
 
   }
 
   .usuario-flutuante{
 
     position:relative;
-
     top:auto;
-
     right:auto;
+    transform:none;
 
-    margin:10px auto;
+    width:100%;
+
+    margin-top:12px;
 
     display:flex;
-
     justify-content:center;
 
   }
 
-.card-usuario{
+  .card-usuario{
 
-  background:white;
+    width:95%;
 
-  border-radius:24px;
+    min-width:auto;
 
-  padding:18px 30px;
+    padding:20px;
 
-  display:flex;
+    gap:18px;
 
-  align-items:center;
+  }
 
-  gap:24px;
+  .usuario-avatar{
 
-  min-width:520px;
+    order:2;
 
-  border:1px solid #E8E8E8;
+  }
 
-  box-shadow:
-  0 8px 24px rgba(0,0,0,.08);
+  .usuario-info{
 
-}
+    order:1;
 
-.usuario-nome{
+    flex:1;
 
-  font-size:18px;
+  }
 
-  line-height:1.1;
+  .usuario-sair{
 
-  font-weight:700;
+    order:3;
 
-  color:#123C77;
+  }
 
-}
+  .avatar-img{
+
+    width:85px;
+    height:85px;
+
+  }
+
+  .usuario-nome{
+
+    font-size:14px;
+
+  }
 
   .usuario-cargo{
 
-    font-size:18px;
+    font-size:12px;
 
   }
 
   .usuario-boasvindas{
 
-    font-size:18px;
-
-  }
-
-  .usuario-divisor{
-
-    height:70px;
+    font-size:10px;
 
   }
 
   .btn-sair-header{
 
-font-size:24px;
-font-weight:700;
-
-  }
-
-  .main{
-
-    padding:28px 12px;
+    font-size:18px;
 
   }
 
   .menu-grid{
 
     grid-template-columns:
-    repeat(2, 1fr);
+    repeat(2,1fr);
 
-    gap:24px 18px;
+    gap:22px;
 
     justify-items:center;
 
@@ -531,19 +526,18 @@ font-weight:700;
 
   .menu-card{
 
-    width:150px;
-
-    height:135px;
+    width:160px;
+    height:145px;
 
     border-radius:22px;
 
-    padding:7px;
+    padding:8px;
 
   }
 
   .icone-menu{
 
-    width:132px;
+    width:140px;
 
   }
 
@@ -634,148 +628,3 @@ font-weight:700;
 
 }
 
-/* =====================================
-   CELULAR
-===================================== */
-
-@media(max-width:768px){
-
-  .header-imagem{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    padding:10px;
-
-  }
-
-  .header-imagem img{
-
-    width:95%;
-
-    height:auto;
-
-    max-width:600px;
-
-  }
-
-  .usuario-flutuante{
-
-    position:relative;
-
-    top:auto;
-
-    right:auto;
-
-    transform:none;
-
-    width:100%;
-
-    margin-top:12px;
-
-    display:flex;
-
-    justify-content:center;
-
-  }
-
-.card-usuario{
-
-  width:95%;
-
-  padding:20px;
-
-  gap:12px;
-
-}
-
-  .usuario-nome{
-
-    font-size:14px;
-
-  }
-
-  .usuario-cargo{
-
-    font-size:10px;
-
-  }
-
-  .usuario-boasvindas{
-
-    font-size:08px;
-
-  }
-
-  .menu-grid{
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:22px;
-
-    justify-items:center;
-
-  }
-
-  .menu-card{
-
-    width:160px;
-
-    height:145px;
-
-    border-radius:22px;
-
-    padding:8px;
-
-  }
-
-  .icone-menu{
-
-    width:140px;
-
-  }
-
-  .footer{
-
-    flex-direction:column;
-
-    gap:20px;
-
-  }
-
-  .marca-esquerda,
-  .marca-direita{
-
-    display:none;
-.usuario-avatar{
-
-  order:2;
-
-}
-.usuario-info{
-
-  order:1;
-
-  flex:1;
-
-}
-
-.usuario-sair{
-
-  order:3;
-
-}
-
-  .avatar-img{
-
-    width:85px;
-
-    height:85px;
-
-  }
-
-}
