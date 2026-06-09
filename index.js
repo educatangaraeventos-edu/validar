@@ -129,59 +129,43 @@ function carregarSistema() {
 
   }
 
-  document.getElementById(
-    'usuarioArea'
-  ).innerHTML = `
+document.getElementById(
+  'usuarioArea'
+).innerHTML = `
 
-  <div class="card-usuario">
+<div class="card-usuario">
 
-    <div class="usuario-avatar">
+  <div class="usuario-info">
 
-      <img
-        src="icone-usuario-dourado.png"
-        class="avatar-img"
-      >
+    <div class="usuario-nome">
 
-    </div>
-
-    <div class="usuario-info">
-
-      <div class="usuario-nome">
-
-        ${usuario.nome || usuario.NOME || 'Usuário'}
-
-      </div>
-
-      <div class="usuario-cargo">
-
-        ${usuario.perfil || usuario.PERFIL || 'Servidor'}
-
-      </div>
-
-      <div class="usuario-boasvindas">
-
-        Acesso autorizado
-
-      </div>
+      ${usuario.nome || usuario.NOME || 'Usuário'}
 
     </div>
 
-    <div class="usuario-sair">
+    <div class="usuario-cargo">
 
-      <button
-        onclick="sair()"
-        class="btn-sair-header">
-
-        Sair
-
-      </button>
+      ${usuario.perfil || usuario.PERFIL || 'Servidor'}
 
     </div>
 
   </div>
 
-  `;
+  <div class="usuario-sair">
 
+    <button
+      onclick="sair()"
+      class="btn-sair-header">
+
+      Sair
+
+    </button>
+
+  </div>
+
+</div>
+
+`;
   document.getElementById(
     'loginContainer'
   ).style.display = 'none';
