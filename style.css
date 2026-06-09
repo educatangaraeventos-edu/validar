@@ -39,7 +39,6 @@ body{
 /* =====================================
    HEADER
 ===================================== */
-
 .header-imagem{
 
   position:relative;
@@ -50,21 +49,30 @@ body{
 
   border-bottom:3px solid var(--dourado);
 
+  display:flex;
+
+  align-items:center;
+
+  justify-content:flex-start;
+
+  padding:10px 30px;
+
 }
 
 .header-imagem img{
 
-  width:100%;
+  height:120px;
 
-  height:auto;
+  width:auto;
+
+  max-width:65%;
 
   display:block;
-
-  max-height:160px;
 
   object-fit:contain;
 
 }
+
 
 /* =====================================
    CARTÃO USUÁRIO
@@ -219,7 +227,7 @@ body{
   display:grid;
 
   grid-template-columns:
-  repeat(3, 260px);
+  repeat(3, 250px);
 
   justify-content:center;
 
@@ -229,13 +237,13 @@ body{
 
 .menu-card{
 
-  width:260px;
+  width:250px;
 
-  height:220px;
+  height:210px;
 
   background:white;
 
-  border:2px solid rgba(212,160,23,.65);
+  border:2px solid rgba(212,160,23,.7);
 
   border-radius:26px;
 
@@ -245,7 +253,7 @@ body{
 
   justify-content:center;
 
-  padding:14px;
+  padding:12px;
 
   box-shadow:
   0 8px 22px rgba(0,0,0,.08);
@@ -273,7 +281,7 @@ body{
 
 .icone-menu{
 
-  width:220px;
+  width:218px;
 
   height:auto;
 
@@ -426,9 +434,21 @@ body{
 
 @media(max-width:768px){
 
+  .header-imagem{
+
+    justify-content:center;
+
+    padding:8px 10px;
+
+  }
+
   .header-imagem img{
 
-    max-height:70px;
+    width:92%;
+
+    height:auto;
+
+    max-width:92%;
 
   }
 
@@ -450,15 +470,111 @@ body{
 
   .card-usuario{
 
+    width:94%;
+
     min-width:auto;
 
-    width:95%;
+    padding:14px 16px;
+
+    border-radius:22px;
+
+    gap:12px;
+
+  }
+
+  .avatar-img{
+
+    width:54px;
+
+    height:54px;
+
+  }
+
+  .usuario-nome{
+
+    font-size:24px;
+
+  }
+
+  .usuario-cargo{
+
+    font-size:18px;
+
+  }
+
+  .usuario-boasvindas{
+
+    font-size:18px;
+
+  }
+
+  .usuario-divisor{
+
+    height:70px;
+
+  }
+
+  .btn-sair-header{
+
+    font-size:22px;
+
+  }
+
+  .main{
+
+    padding:28px 12px;
+
+  }
+
+  .menu-grid{
+
+    grid-template-columns:
+    repeat(2, 1fr);
+
+    gap:24px 18px;
+
+    justify-items:center;
+
+  }
+
+  .menu-card{
+
+    width:150px;
+
+    height:135px;
+
+    border-radius:22px;
+
+    padding:7px;
 
   }
 
   .icone-menu{
 
-    width:170px;
+    width:132px;
+
+  }
+
+  .footer{
+
+    flex-direction:column;
+
+    gap:20px;
+
+    padding:28px 18px;
+
+  }
+
+  .footer-coluna{
+
+    width:100%;
+
+  }
+
+  .marca-esquerda,
+  .marca-direita{
+
+    display:none;
 
   }
 
