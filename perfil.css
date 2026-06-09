@@ -601,5 +601,19 @@ body{
     width:100%;
 
   }
+  
+
+}
+.linha-botao-cracha{
+
+  text-align:center;
+
+  margin-top:20px;
+
+}
+
+.linha-botao-cracha .btn-acao{
+
+  min-width:180px;
 
 }
