@@ -2,7 +2,9 @@ const API_URL =
 'https://script.google.com/macros/s/AKfycbxISKb7Sq5bkEYIcs8DTElxV8D93fsfbPZDd1fIlQM-CBl-hoSRb82fk08TY1m9fAtx/exec';
 
 function consultarPermissao(email) {
+
   return new Promise((resolve, reject) => {
+
     const callbackNome =
       'callback_' + Date.now();
 
@@ -10,9 +12,13 @@ function consultarPermissao(email) {
       document.createElement('script');
 
     window[callbackNome] = function(dados) {
+
       resolve(dados);
+
       delete window[callbackNome];
+
       script.remove();
+
     };
 
     script.src =
@@ -24,41 +30,68 @@ function consultarPermissao(email) {
       callbackNome;
 
     script.onerror = function() {
+
       reject(
         new Error('Erro ao carregar dados da API.')
       );
+
     };
 
     document.body.appendChild(script);
+
   });
+
 }
 
 function sair() {
+
   localStorage.removeItem('usuario');
+
   location.reload();
+
 }
 
 function mostrarLogin() {
-  document.getElementById('loginContainer').style.display = 'block';
-  document.getElementById('menu').style.display = 'none';
+
+  document.getElementById(
+    'loginContainer'
+  ).style.display = 'block';
+
+  document.getElementById(
+    'menu'
+  ).style.display = 'none';
+
 }
 
 async function entrar() {
+
   const email =
-    document.getElementById('email').value.trim();
+    document.getElementById('email')
+      .value
+      .trim();
 
   if (!email) {
+
     alert('Informe o e-mail.');
+
     return;
+
   }
 
   try {
+
     const usuario =
       await consultarPermissao(email);
 
-    if (!usuario || usuario.status !== 'ATIVO') {
+    if (
+      !usuario ||
+      usuario.status !== 'ATIVO'
+    ) {
+
       alert('Usuário sem acesso.');
+
       return;
+
     }
 
     localStorage.setItem(
@@ -68,92 +101,114 @@ async function entrar() {
 
     carregarSistema();
 
-  } catch (erro) {
-    console.error(erro);
-    alert('Erro ao consultar permissões.');
   }
+
+  catch (erro) {
+
+    console.error(erro);
+
+    alert(
+      'Erro ao consultar permissões.'
+    );
+
+  }
+
 }
 
 function carregarSistema() {
+
   const usuario = JSON.parse(
     localStorage.getItem('usuario')
   );
 
   if (!usuario) {
+
     mostrarLogin();
+
     return;
+
   }
 
-document.getElementById(
-'usuarioArea'
-).innerHTML = `
+  document.getElementById(
+    'usuarioArea'
+  ).innerHTML = `
 
-<div class="card-usuario">
+  <div class="card-usuario">
 
-<div class="usuario-avatar">
+    <div class="usuario-avatar">
 
-<div class="usuario-avatar">
-
-  <img
-    src="icone-usuario-dourado.png"
-    class="avatar-img"
-  >
-
-</div>
-
-  <div class="usuario-info">
-
-    <div class="usuario-nome">
-
-      Roselaine Mezz
+      <img
+        src="icone-usuario-dourado.png"
+        class="avatar-img"
+      >
 
     </div>
 
-    <div class="usuario-cargo">
+    <div class="usuario-info">
 
-      Administrador do Sistema
+      <div class="usuario-nome">
+
+        ${usuario.nome || usuario.NOME || 'Usuário'}
+
+      </div>
+
+      <div class="usuario-cargo">
+
+        ${usuario.perfil || usuario.PERFIL || 'Servidor'}
+
+      </div>
+
+      <div class="usuario-boasvindas">
+
+        Bem-vindo(a)!
+
+      </div>
 
     </div>
 
-    <div class="usuario-boasvindas">
+    <div class="usuario-divisor"></div>
 
-      Bem-vinda(a)!
+    <div class="usuario-sair">
+
+      <button
+        onclick="sair()"
+        class="btn-sair-header">
+
+        ↪<br>Sair
+
+      </button>
 
     </div>
 
   </div>
 
-  <div class="usuario-divisor"></div>
+  `;
 
-  <div class="usuario-sair">
+  document.getElementById(
+    'loginContainer'
+  ).style.display = 'none';
 
-    <button
-      onclick="sair()"
-      class="btn-sair-header">
+  document.getElementById(
+    'menu'
+  ).style.display = 'grid';
 
-      ↪
-      <br>
-      Sair
-
-    </button>
-
-  </div>
-
-</div>
-
-`;
-
-  document.getElementById('loginContainer').style.display = 'none';
-  document.getElementById('menu').style.display = 'grid';
 }
 
 window.onload = function() {
+
   const usuario =
     localStorage.getItem('usuario');
 
   if (usuario) {
+
     carregarSistema();
-  } else {
-    mostrarLogin();
+
   }
+
+  else {
+
+    mostrarLogin();
+
+  }
+
 };
