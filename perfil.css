@@ -245,9 +245,40 @@ body{
 
 }
 
-/* ==========================
-   RODAPÉ
-========================== */
+/* =====================================
+   FOOTER
+===================================== */
+
+.footer{
+
+  background:linear-gradient(
+    90deg,
+    #0B2852,
+    #123A72
+  );
+
+  color:white;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding:25px;
+
+  border-top:4px solid #D4A017;
+
+}
+
+.footer-coluna{
+
+  flex:1;
+
+  text-align:center;
+
+}
+
 .footer-institucional{
 
   display:flex;
@@ -265,7 +296,9 @@ body{
   width:70px;
 
 }
-
+.footer{
+  overflow:hidden;
+}
 .footer-cidade,
 .footer-programa,
 .footer-versao,
@@ -275,36 +308,6 @@ body{
 
 }
 
-.footer{
-  overflow:hidden;
-}
-.footer{
-
-  background:linear-gradient(
-    90deg,
-    #0B2852,
-    #123A72
-  );
-
-  color:white;
-
-  display:flex;
-
-  justify-content:space-between;
-
-  padding:25px;
-
-  border-top:4px solid var(--dourado);
-
-}
-
-.footer-coluna{
-
-  flex:1;
-
-  text-align:center;
-
-}
 
 /* ==========================
    CELULAR
