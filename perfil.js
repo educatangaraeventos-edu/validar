@@ -85,7 +85,7 @@ async function carregarPerfil() {
 
       await resposta.json();
 document.getElementById(
-  'fotoUsuario'
+  'fotoServidor'
 ).src =
   converterLinkFotoDrive(
     servidor.foto
@@ -124,7 +124,16 @@ document.getElementById(
       'perfilStatus'
     ).textContent =
       servidor.status || '-';
+    
+document.getElementById(
+  'perfilMatricula'
+).textContent =
+  servidor.matricula || '-';
 
+document.getElementById(
+  'perfilTelefone'
+).textContent =
+  servidor.telefone || '-';
     const btnCracha =
       document.getElementById(
         'btnCracha'
