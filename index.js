@@ -174,7 +174,7 @@ function carregarSistema() {
         onclick="sair()"
         class="btn-sair-header">
 
-        ↪<br>Sair
+      🚪<br>Sair
 
       </button>
 
