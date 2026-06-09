@@ -146,27 +146,25 @@ function carregarSistema() {
 
     <div class="usuario-info">
 
-<div class="usuario-nome">
+      <div class="usuario-nome">
 
-  ${usuario.nome || usuario.NOME || 'Roselaine Mezz'}
+        ${usuario.nome || usuario.NOME || 'Usuário'}
 
-</div>
+      </div>
 
-<div class="usuario-cargo">
+      <div class="usuario-cargo">
 
-  Administrador do Sistema
+        ${usuario.perfil || usuario.PERFIL || 'Servidor'}
 
-</div>
+      </div>
 
-<div class="usuario-boasvindas">
+      <div class="usuario-boasvindas">
 
-  Acesso autorizado 
+        Acesso autorizado
 
-</div>
+      </div>
 
     </div>
-
-    <div class="usuario-divisor"></div>
 
     <div class="usuario-sair">
 
@@ -174,7 +172,7 @@ function carregarSistema() {
         onclick="sair()"
         class="btn-sair-header">
 
-     Sair
+        Sair
 
       </button>
 
@@ -193,22 +191,3 @@ function carregarSistema() {
   ).style.display = 'grid';
 
 }
-
-window.onload = function() {
-
-  const usuario =
-    localStorage.getItem('usuario');
-
-  if (usuario) {
-
-    carregarSistema();
-
-  }
-
-  else {
-
-    mostrarLogin();
-
-  }
-
-};
