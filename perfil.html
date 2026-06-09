@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>Meu Perfil</title>
+
+<link
+  rel="stylesheet"
+  href="perfil.css"
+>
+
+</head>
+
+<body>
+
+<!-- CABEÇALHO -->
+
+<header class="header-imagem">
+
+  <img
+    src="cabecalho.png"
+    alt="Programa de Formação Continuada"
+  >
+
+  <div class="usuario-flutuante">
+
+    <div class="card-usuario">
+
+      <div class="usuario-info">
+
+        <div
+          class="usuario-nome"
+          id="nomeUsuario"
+        >
+          Carregando...
+        </div>
+
+        <div
+          class="usuario-cargo"
+          id="cargoUsuario"
+        >
+          Carregando...
+        </div>
+
+      </div>
+
+      <button
+        onclick="voltarInicio()"
+        class="btn-voltar"
+      >
+        Início
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- CONTEÚDO -->
+
+<main class="main">
+
+  <!-- DADOS DO SERVIDOR -->
+
+  <section class="bloco">
+
+    <h2>
+      Dados do Servidor
+    </h2>
+
+    <div class="dados-grid">
+
+      <div>
+
+        <strong>Nome:</strong>
+
+        <span id="perfilNome">
+          -
+        </span>
+
+      </div>
+
+      <div>
+
+        <strong>Cargo:</strong>
+
+        <span id="perfilCargo">
+          -
+        </span>
+
+      </div>
+
+      <div>
+
+        <strong>Escola / Setor:</strong>
+
+        <span id="perfilEscola">
+          -
+        </span>
+
+      </div>
+
+      <div>
+
+        <strong>E-mail:</strong>
+
+        <span id="perfilEmail">
+          -
+        </span>
+
+      </div>
+
+      <div>
+
+        <strong>Status:</strong>
+
+        <span id="perfilStatus">
+          -
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- MEU CRACHÁ -->
+
+  <section class="bloco">
+
+    <h2>
+      Meu Crachá
+    </h2>
+
+    <div class="card-simples">
+
+      <button
+        class="btn-acao"
+        id="btnCracha"
+      >
+        Abrir Crachá
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- FORMAÇÕES -->
+
+  <section class="bloco">
+
+    <h2>
+      Minhas Formações
+    </h2>
+
+    <div
+      id="listaFormacoes"
+      class="lista-vazia"
+    >
+
+      Nenhuma formação carregada.
+
+    </div>
+
+  </section>
+
+  <!-- CERTIFICADOS -->
+
+  <section class="bloco">
+
+    <h2>
+      Meus Certificados
+    </h2>
+
+    <div
+      id="listaCertificados"
+      class="lista-vazia"
+    >
+
+      Nenhum certificado carregado.
+
+    </div>
+
+  </section>
+
+</main>
+
+<!-- RODAPÉ -->
+
+<footer class="footer">
+
+  <div class="footer-coluna">
+
+    Secretaria Municipal de Educação
+
+    <br>
+
+    Tangará da Serra - MT
+
+  </div>
+
+  <div class="footer-coluna">
+
+    Programa de Formação Continuada
+
+  </div>
+
+  <div class="footer-coluna">
+
+    Educação que inspira
+
+  </div>
+
+</footer>
+
+<script src="perfil.js"></script>
+
+</body>
+
+</html>
