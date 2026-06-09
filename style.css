@@ -450,31 +450,38 @@ body{
 
   }
 
-  .card-usuario{
+.card-usuario{
 
-    width:95%;
+  width:95%;
 
-    min-width:auto;
+  min-width:auto;
 
-    padding:20px;
+  padding:18px;
 
-    gap:18px;
+  display:flex;
 
-  }
+  align-items:center;
 
-  .usuario-avatar{
+  justify-content:space-between;
 
-    order:2;
+  gap:12px;
 
-  }
+}
+.usuario-avatar{
 
-  .usuario-info{
+  order:1;
 
-    order:1;
+  flex-shrink:0;
 
-    flex:1;
+}
 
-  }
+.usuario-info{
+
+  order:2;
+
+  flex:1;
+
+}
 
   .usuario-sair{
 
@@ -482,36 +489,38 @@ body{
 
   }
 
-  .avatar-img{
+.avatar-img{
 
-    width:85px;
-    height:85px;
+  width:72px;
+  height:72px;
 
-  }
+}
+.usuario-nome{
 
-  .usuario-nome{
+  font-size:15px;
+  line-height:1.1;
 
-    font-size:14px;
+}
 
-  }
+.usuario-cargo{
 
-  .usuario-cargo{
+  font-size:11px;
 
-    font-size:12px;
+}
 
-  }
+.usuario-boasvindas{
 
-  .usuario-boasvindas{
+  font-size:11px;
 
-    font-size:10px;
+}
 
-  }
+.btn-sair-header{
 
-  .btn-sair-header{
+  font-size:16px;
 
-    font-size:18px;
+  color:#D4A017;
 
-  }
+}
 
   .menu-grid{
 
