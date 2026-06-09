@@ -104,10 +104,8 @@ body{
 }
 
 .usuario-avatar{
-
-  width:80px;
-  min-width:80px;
-
+  width:auto;
+  min-width:auto;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -178,7 +176,7 @@ body{
 
   color:#D4A017;
 
-  font-size:20px;
+  font-size:24px;
 
   font-weight:700;
 
@@ -510,7 +508,8 @@ body{
 
   .btn-sair-header{
 
-    font-size:22px;
+font-size:24px;
+font-weight:700;
 
   }
 
@@ -762,8 +761,8 @@ body{
 
 .avatar-img{
 
-  width:85px;
-  height:85px;
+  width:80px;
+  height:80px;
 
 }
   }
