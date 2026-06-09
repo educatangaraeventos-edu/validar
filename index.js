@@ -160,7 +160,7 @@ function carregarSistema() {
 
 <div class="usuario-boasvindas">
 
-  Bem-vindo(a)!
+  Acesso autorizado 
 
 </div>
 
