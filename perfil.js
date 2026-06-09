@@ -7,7 +7,43 @@ function voltarInicio() {
     'index.html';
 
 }
+function converterLinkFotoDrive(link) {
 
+  if (!link) {
+    return 'icone-usuario-dourado.png';
+  }
+
+  const texto =
+    String(link);
+
+  let id = '';
+
+  if (texto.includes('open?id=')) {
+
+    id =
+      texto.split('open?id=')[1]
+        .split('&')[0];
+
+  }
+
+  if (texto.includes('/file/d/')) {
+
+    id =
+      texto.split('/file/d/')[1]
+        .split('/')[0];
+
+  }
+
+  if (!id) {
+    return link;
+  }
+
+  return (
+    'https://drive.google.com/thumbnail?id=' +
+    id
+  );
+
+}
 async function carregarPerfil() {
 
   const usuario = JSON.parse(
@@ -48,7 +84,12 @@ async function carregarPerfil() {
     const servidor =
 
       await resposta.json();
-
+document.getElementById(
+  'fotoUsuario'
+).src =
+  converterLinkFotoDrive(
+    servidor.foto
+  );
     document.getElementById(
       'nomeUsuario'
     ).textContent =
