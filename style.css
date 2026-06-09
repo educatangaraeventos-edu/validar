@@ -57,7 +57,7 @@ body{
 
   width:auto;
 
-  height:90px;
+  height:120px;
 
   display:block;
 
@@ -105,9 +105,9 @@ body{
 
 .usuario-avatar{
 
-  width:58px;
+  width:80px;
 
-  height:58px;
+  height:80px;
 
   display:flex;
 
@@ -119,9 +119,9 @@ body{
 
 .avatar-img{
 
-  width:50px;
+  width:72px;
 
-  height:50px;
+  height:72px;
 
   object-fit:contain;
 
@@ -176,17 +176,28 @@ body{
 
 .btn-sair-header{
 
-  background:none;
+  background:linear-gradient(
+    180deg,
+    #F2D16B,
+    #D4A017
+  );
+
+  color:white;
 
   border:none;
 
-  color:var(--dourado);
+  border-radius:14px;
 
-  font-size:18px;
+  padding:10px 14px;
+
+  font-size:16px;
 
   font-weight:700;
 
   cursor:pointer;
+
+  box-shadow:
+  0 3px 8px rgba(212,160,23,.35);
 
 }
 /* =====================================
