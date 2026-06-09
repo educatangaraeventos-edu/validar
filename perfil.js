@@ -116,11 +116,6 @@ document.getElementById(
       servidor.escola || '-';
 
     document.getElementById(
-      'perfilEmail'
-    ).textContent =
-      servidor.email || '-';
-
-    document.getElementById(
       'perfilStatus'
     ).textContent =
       servidor.status || '-';
