@@ -441,3 +441,86 @@ body{
   }
 
 }
+/* =====================================
+   FOOTER
+===================================== */
+
+.footer{
+
+  background:linear-gradient(
+    90deg,
+    #0B2852,
+    #123A72
+  );
+
+  color:white;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding:25px;
+
+  border-top:4px solid #D4A017;
+
+}
+
+.footer-coluna{
+
+  flex:1;
+
+  text-align:center;
+
+}
+
+.footer-institucional{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:12px;
+
+}
+
+.brasao-footer{
+
+  width:55px;
+
+}
+
+.footer-cidade,
+.footer-programa,
+.footer-versao,
+.footer-slogan{
+
+  color:#D4A017;
+
+}
+
+/* =====================================
+   CELULAR
+===================================== */
+
+@media(max-width:768px){
+
+  .footer{
+
+    flex-direction:column;
+
+    gap:20px;
+
+  }
+
+  .marca-esquerda,
+  .marca-direita{
+
+    display:none;
+
+  }
+
+}
