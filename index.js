@@ -72,17 +72,11 @@ function carregarSistema() {
     return;
   }
 
-  const nomeUsuario =
-    usuario.NOME_COMPLETO ||
-    usuario.nomeCompleto ||
-    usuario.nome ||
-    usuario.NOME ||
-    'Usuário';
+const nomeUsuario =
+  usuario.NOME || 'Usuário';
 
-  const cargoUsuario =
-    usuario.CARGO ||
-    usuario.cargo ||
-    'Servidor';
+const cargoUsuario =
+  usuario.PERFIL || 'Servidor';
 
   document.getElementById('usuarioArea').innerHTML = `
     <div class="card-usuario">
