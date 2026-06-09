@@ -50,7 +50,10 @@ async function entrar() {
   try {
     const usuario = await consultarPermissao(email);
 
-    if (!usuario || usuario.status !== 'ATIVO') {
+   if (
+  !usuario ||
+  (usuario.STATUS || usuario.status) !== 'ATIVO'
+) {
       alert('Usuário sem acesso.');
       return;
     }
