@@ -266,7 +266,7 @@ body{
 
   max-width:500px;
 
-  margin:60px auto;
+  margin:25px auto;
 
 }
 
@@ -406,7 +406,7 @@ body{
 
   .header-imagem img{
 
-    max-height:90px;
+    max-height:70px;
 
   }
 
@@ -489,10 +489,12 @@ body{
 
 .brasao-footer{
 
-  width:55px;
+  width:70px;
 
 }
-
+.footer{
+  overflow:hidden;
+}
 .footer-cidade,
 .footer-programa,
 .footer-versao,
